@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Velocity", "WindowsApp1\Velocity.vbproj", "{E581CB45-511E-467F-AB41-893F65273A11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D7041E4-C6BE-4D44-B06D-6235DB1AD083}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TEST", "TEST\TEST.vdproj", "{0C6B855D-DCE3-4864-A090-5B95605A8857}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E581CB45-511E-467F-AB41-893F65273A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E581CB45-511E-467F-AB41-893F65273A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E581CB45-511E-467F-AB41-893F65273A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E581CB45-511E-467F-AB41-893F65273A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6B855D-DCE3-4864-A090-5B95605A8857}.Debug|Any CPU.ActiveCfg = Debug
+		{0C6B855D-DCE3-4864-A090-5B95605A8857}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDE5E2E6-B35C-4D61-A93A-FF30CB24B78B}
+	EndGlobalSection
+EndGlobal
