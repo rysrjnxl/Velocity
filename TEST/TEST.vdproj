@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0EF18AEFD0BC47A9B1E6E16829F12CEA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_11AA6E7A44097AA54061DDC90D838FA2"
         "OwnerKey" = "8:_7B1982DB97C4588ADB912D89E236A16A"
         "MsmSig" = "8:_UNDEFINED"
@@ -113,6 +119,12 @@
         {
         "MsmKey" = "8:_2A8C2A6E6E4A3C836463E75F3DCFB5E7"
         "OwnerKey" = "8:_47E7A6A6C8C6FEB785145AC6BEED6242"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_454EAFE55997420489DD0679E309125D"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -472,6 +484,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -531,6 +551,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0EF18AEFD0BC47A9B1E6E16829F12CEA"
+            {
+            "SourcePath" = "8:..\\..\\Icons\\vlogo.png"
+            "TargetName" = "8:vlogo.png"
+            "Tag" = "8:"
+            "Folder" = "8:_E3B50782B8094C91B35C992A2F43E045"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_11AA6E7A44097AA54061DDC90D838FA2"
@@ -624,6 +664,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_454EAFE55997420489DD0679E309125D"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\..\\Downloads\\vlogo.ico"
+            "TargetName" = "8:vlogo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_E3B50782B8094C91B35C992A2F43E045"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_47E7A6A6C8C6FEB785145AC6BEED6242"
@@ -1217,7 +1277,7 @@
             "Target" = "8:_BA59E4EAD02E441CABAA0C2E7381707E"
             "Folder" = "8:_DED97F1AC3B64C2EB5D4FCCEC2D09FA9"
             "WorkingFolder" = "8:_E3B50782B8094C91B35C992A2F43E045"
-            "Icon" = "8:"
+            "Icon" = "8:_454EAFE55997420489DD0679E309125D"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E5374D1A11A341B08E219B9A21CEC374"
@@ -1231,7 +1291,7 @@
             "Target" = "8:_BA59E4EAD02E441CABAA0C2E7381707E"
             "Folder" = "8:_A09F249F794046DB998FC73C23390899"
             "WorkingFolder" = "8:_E3B50782B8094C91B35C992A2F43E045"
-            "Icon" = "8:"
+            "Icon" = "8:_454EAFE55997420489DD0679E309125D"
             "Feature" = "8:"
             }
         }

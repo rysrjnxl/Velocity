@@ -23,6 +23,7 @@ Partial Class CustomerRecords
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.CustomerList = New System.Windows.Forms.DataGridView()
         Me.EmailTxtBx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ContactNumTxtBx = New Guna.UI2.WinForms.Guna2TextBox()
@@ -36,7 +37,6 @@ Partial Class CustomerRecords
         Me.UpdateBtn = New System.Windows.Forms.Button()
         Me.SearchBarTxtBx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ClearBtn = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.CustomerList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -63,6 +63,17 @@ Partial Class CustomerRecords
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1361, 838)
         Me.Panel1.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label5.Font = New System.Drawing.Font("ROG Fonts", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(506, 43)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Customer Records"
         '
         'CustomerList
         '
@@ -260,17 +271,6 @@ Partial Class CustomerRecords
         Me.ClearBtn.TabIndex = 2
         Me.ClearBtn.Text = "Clear"
         Me.ClearBtn.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label5.Font = New System.Drawing.Font("ROG Fonts", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(0, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(506, 43)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Customer Records"
         '
         'CustomerRecords
         '
