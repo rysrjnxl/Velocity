@@ -12,6 +12,7 @@ Public Class Dashboard
         Dim parentForm As Main = CType(Me.MdiParent, Main)
         AddHandler parentForm.SidebarResized, AddressOf OnSidebarResized
     End Sub
+
     Private Sub OnSidebarResized(sidebarWidth As Integer)
         Dim newWidth As Integer = Me.MdiParent.ClientSize.Width - sidebarWidth
         Me.Width = newWidth
@@ -65,4 +66,5 @@ Public Class Dashboard
             End Try
         End Using
     End Sub
+
 End Class

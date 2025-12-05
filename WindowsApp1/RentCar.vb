@@ -6,6 +6,7 @@ Public Class RentCar
     Private CarPanelMap As New Dictionary(Of String, Panel)
     Private CarButtonMap As New Dictionary(Of String, Button)
     Private Sub RentCar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Theme.ApplyThemeToForm(Me)
         Me.ControlBox = False
         BufferPictureControls()
 
@@ -98,4 +99,5 @@ Public Class RentCar
     Private Sub RentCar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         UpdateCarAvailability()
     End Sub
+
 End Class

@@ -69,6 +69,7 @@ Partial Class RentCar
         Me.Hilux2024Panel = New System.Windows.Forms.Panel()
         Me.Hilux2022Panel = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.CarFlowPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.Vios2024Panel = New System.Windows.Forms.Panel()
         Me.CarPic1 = New System.Windows.Forms.PictureBox()
@@ -93,6 +94,7 @@ Partial Class RentCar
         Me.Fortuner2023Panel.SuspendLayout()
         Me.Hilux2024Panel.SuspendLayout()
         Me.Hilux2022Panel.SuspendLayout()
+        Me.Panel11.SuspendLayout()
         Me.CarFlowPanel.SuspendLayout()
         Me.Vios2024Panel.SuspendLayout()
         CType(Me.CarPic1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -559,12 +561,24 @@ Partial Class RentCar
         '
         'Panel11
         '
+        Me.Panel11.Controls.Add(Me.Label21)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1361, 70)
         Me.Panel11.TabIndex = 59
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label21.Font = New System.Drawing.Font("ROG Fonts", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(0, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(306, 53)
+        Me.Label21.TabIndex = 1
+        Me.Label21.Text = "Rent Car"
         '
         'CarFlowPanel
         '
@@ -677,6 +691,8 @@ Partial Class RentCar
         Me.Hilux2024Panel.PerformLayout()
         Me.Hilux2022Panel.ResumeLayout(False)
         Me.Hilux2022Panel.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
         Me.CarFlowPanel.ResumeLayout(False)
         Me.Vios2024Panel.ResumeLayout(False)
         Me.Vios2024Panel.PerformLayout()
@@ -736,4 +752,5 @@ Partial Class RentCar
     Friend WithEvents Vios2024RentBtn As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label21 As Label
 End Class

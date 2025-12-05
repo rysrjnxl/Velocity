@@ -1,5 +1,6 @@
 ﻿Public Class About
     Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Theme.ApplyThemeToForm(Me)
         Me.ControlBox = False
         Dim parentForm As Main = CType(Me.MdiParent, Main)
         AddHandler parentForm.SidebarResized, AddressOf OnSidebarResized

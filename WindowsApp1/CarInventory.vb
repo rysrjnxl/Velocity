@@ -6,6 +6,7 @@ Public Class CarInventory
     Private CarLabelMap As New Dictionary(Of String, Label)
     Private WithEvents StatusMenu As New ContextMenuStrip()
     Private Sub CarInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Theme.ApplyThemeToForm(Me)
         Me.ControlBox = False
         Dim parentForm As Main = CType(Me.MdiParent, Main)
         AddHandler parentForm.SidebarResized, AddressOf OnSidebarResized
@@ -167,4 +168,5 @@ Public Class CarInventory
     Private Sub CarInventory_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         UpdateInventoryStatus()
     End Sub
+
 End Class

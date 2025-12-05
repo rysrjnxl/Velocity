@@ -192,8 +192,12 @@
         FormAbout = Nothing
     End Sub
     Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
-        MessageBox.Show("Logout?")
-        Login.Show()
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            Login.Show()
+            Me.Close()
+        End If
     End Sub
 
 

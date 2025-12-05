@@ -24,7 +24,12 @@ Partial Class Settings
     Private Sub InitializeComponent()
         Me.LightModeBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.DarkModeBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LightModeBtn
@@ -32,10 +37,10 @@ Partial Class Settings
         Me.LightModeBtn.CheckedState.Parent = Me.LightModeBtn
         Me.LightModeBtn.CustomImages.Parent = Me.LightModeBtn
         Me.LightModeBtn.FillColor = System.Drawing.Color.White
-        Me.LightModeBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.LightModeBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LightModeBtn.ForeColor = System.Drawing.Color.Black
         Me.LightModeBtn.HoverState.Parent = Me.LightModeBtn
-        Me.LightModeBtn.Location = New System.Drawing.Point(220, 90)
+        Me.LightModeBtn.Location = New System.Drawing.Point(220, 479)
         Me.LightModeBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LightModeBtn.Name = "LightModeBtn"
         Me.LightModeBtn.ShadowDecoration.Parent = Me.LightModeBtn
@@ -48,10 +53,10 @@ Partial Class Settings
         Me.DarkModeBtn.CheckedState.Parent = Me.DarkModeBtn
         Me.DarkModeBtn.CustomImages.Parent = Me.DarkModeBtn
         Me.DarkModeBtn.FillColor = System.Drawing.Color.White
-        Me.DarkModeBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.DarkModeBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DarkModeBtn.ForeColor = System.Drawing.Color.Black
         Me.DarkModeBtn.HoverState.Parent = Me.DarkModeBtn
-        Me.DarkModeBtn.Location = New System.Drawing.Point(12, 90)
+        Me.DarkModeBtn.Location = New System.Drawing.Point(220, 274)
         Me.DarkModeBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DarkModeBtn.Name = "DarkModeBtn"
         Me.DarkModeBtn.ShadowDecoration.Parent = Me.DarkModeBtn
@@ -59,36 +64,82 @@ Partial Class Settings
         Me.DarkModeBtn.TabIndex = 1
         Me.DarkModeBtn.Text = "Dark Mode"
         '
-        'Guna2HtmlLabel1
+        'Panel1
         '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(1440, 60)
-        Me.Guna2HtmlLabel1.TabIndex = 2
-        Me.Guna2HtmlLabel1.Text = "Theme"
+        Me.Panel1.Controls.Add(Me.Label21)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LightModeBtn)
+        Me.Panel1.Controls.Add(Me.DarkModeBtn)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1440, 900)
+        Me.Panel1.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("ROG Fonts", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(48, 125)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(196, 48)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Theme"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("ROG Fonts", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(143, 214)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(279, 38)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Dark Theme"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("ROG Fonts", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(143, 392)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(288, 38)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Light Theme"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label21.Font = New System.Drawing.Font("ROG Fonts", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(0, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(310, 53)
+        Me.Label21.TabIndex = 8
+        Me.Label21.Text = "Settings"
         '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1440, 900)
-        Me.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Controls.Add(Me.DarkModeBtn)
-        Me.Controls.Add(Me.LightModeBtn)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Settings"
         Me.Text = "Settings"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents LightModeBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents DarkModeBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label21 As Label
 End Class
