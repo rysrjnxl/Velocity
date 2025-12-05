@@ -44,7 +44,7 @@ Partial Class Main
         Me.pnSidebar = New System.Windows.Forms.Panel()
         Me.sidebarBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.sidebarPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.pnLogout.SuspendLayout()
         Me.pnAbout.SuspendLayout()
@@ -52,7 +52,7 @@ Partial Class Main
         Me.pnDashboard.SuspendLayout()
         Me.pnSidebar.SuspendLayout()
         Me.sidebarPanel.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'closeBox
@@ -87,7 +87,7 @@ Partial Class Main
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox2)
         Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox2)
         Me.Guna2Panel1.Controls.Add(Me.closeBox)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -352,16 +352,16 @@ Partial Class Main
         Me.sidebarPanel.Size = New System.Drawing.Size(79, 838)
         Me.sidebarPanel.TabIndex = 1
         '
-        'Guna2PictureBox1
+        'Guna2PictureBox2
         '
-        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(12, 10)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.ShadowDecoration.Parent = Me.Guna2PictureBox1
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(55, 43)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 5
-        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(12, 12)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.ShadowDecoration.Parent = Me.Guna2PictureBox2
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(39, 33)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox2.TabIndex = 3
+        Me.Guna2PictureBox2.TabStop = False
         '
         'Main
         '
@@ -383,7 +383,7 @@ Partial Class Main
         Me.pnDashboard.ResumeLayout(False)
         Me.pnSidebar.ResumeLayout(False)
         Me.sidebarPanel.ResumeLayout(False)
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -407,5 +407,5 @@ Partial Class Main
     Friend WithEvents pnSidebar As Panel
     Friend WithEvents sidebarBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents sidebarPanel As FlowLayoutPanel
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

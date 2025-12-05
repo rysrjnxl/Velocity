@@ -121,7 +121,7 @@
   <data name="Guna2PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAYAAAB65WHVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAA/7JJREFUeF7svXd4nNd5p/3JdhI7jh0XWRIr6vTe2zu994reCQIg2HvvvfdexN47
+        vwAADr8BOAVTJAAA/7JJREFUeF7svXd4nNd5p/3JdhI7jh0XWRIr6vTe2zu994reCQIg2HvvvfdexN47
         RUmkRKqwN/XiOMX7bXaz2cSb3U1xXCTy913PmRlwCFCO99tEhu35477emYMhZNnwjYe/85zn/D8A/p8i
         RYoUKdL/6LNQpEiRIkX6B30WihQpUqRI/6DPQpEiRYoU6R/0WShSpEiRIv2DPgtFihQpUqR/0GehSJEi
         RYr0D/osFClSpEiR/kGfhSJFihQp0j/os1CkSJEiRfoHfRaKFClSpEj/oM9CkSJFihTpH/RZKFKkSJEi
@@ -2351,7 +2351,7 @@
   <data name="Guna2PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAYAAAB65WHVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAA/7JJREFUeF7s/XeYXOeZHYhbYkDsUDnnXF2dc+5GIzZiZ3TOOaEDcg4EQIIEQZAg
+        vwAADr8BOAVTJAAA/7JJREFUeF7s/XeYXOeZHYhbYkDsUDnnXF2dc+5GIzZiZ3TOOaEDcg4EQIIEQZAg
         mMBMgiSYk0iKokTlPMkzXnts/7yescf+2WPP7HhGGom4Z5/z3foaTfR417srUqRUf7zPrfqq6lZ33apz
         33ve8573nwH4Z4lIRCISkYgvXixZSEQiEpGIRHwxYslCIhKRiEQk4osRSxYSkYhEJCIRX4xYspCIRHyR
         YnKy5ys3r/1/jc6Rpq/0DDR9tbu/+av9/R1fHR4e/o2/RyIS8ZuIJQuJSMTnFVPDQ1/ZNTZ4y+RQ/22T
@@ -5182,7 +5182,7 @@
   <data name="Guna2PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAYAAAB65WHVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAA/7JJREFUeF7s/XWUnVeap4lOVk1PVXdX364Esy0LLMliCGaGwxzMzMzMpAgFM0co
+        vwAADr8BOAVTJAAA/7JJREFUeF7s/XWUnVeap4lOVk1PVXdX364Esy0LLMliCGaGwxzMzMzMpAgFM0co
         xMwMZpYtWcxsJ1VmVhd1ps9z1/5CcmVJ997pnjs9dtnnj2d939leUsqOsx69+dvvfvf/BvxvFixYsGDh
         +8czCxYsWLBg4fvBMwsWLFiwYOH7wTMLFix8F+TkDP8kPr7kP4QYk//KoIr4a5W37j95usv/xt9N9jcK
         T/V/0ipC/jomKOuvagvX/YdNm478xdO/3oKFHyLPLFiw8L8Cjdz4E7mX6j/4ecj+s5eL5/OeLh5zZV7+
@@ -7949,5 +7949,8 @@
         wyIRFhUnTo5AgPZq0l6Jg3BOyiyWYmFyVgky8iswckwKRidlySB/Dm/iwKTPlq/CtNkLUFY5CcGDI/FR
         zyHIyqvEV9/8gi079gojVIPme4YcUTss37N8X///NFdXxucd11wAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Velocity is a premier Car Rental Management System designed to modernize and simplify the operational complexities of automotive rental businesses. Built to replace manual logging with digital precision, Velocity serves as a centralized hub for managing fleet logistics, customer data, and rental transactions. Our mission is to empower rental agencies with real-time actionable insights, ensuring that every vehicle from economy sedans to premium SUVs is tracked efficiently to maximize utilization and revenue.</value>
   </data>
 </root>
