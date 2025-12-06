@@ -37,7 +37,8 @@ Public Class RentTransaction
             Try
                 conn.Open()
                 Dim query As String = "SELECT car_model FROM cars " &
-                                      "WHERE car_model NOT IN (" &
+                                      "WHERE status <> 'Maintenance' " &
+                                      "AND car_model NOT IN (" &
                                       "    SELECT car_model FROM rentals " &
                                       "    WHERE status = 'Active' " &
                                       "    AND (" &
@@ -62,7 +63,6 @@ Public Class RentTransaction
                 CarModelCmbx.ValueMember = "car_model"
 
                 Dim foundRows = dt.Select("car_model = '" & currentSelection & "'")
-
                 If foundRows.Length > 0 AndAlso currentSelection <> "-- Select Car --" Then
                     CarModelCmbx.SelectedValue = currentSelection
                 Else

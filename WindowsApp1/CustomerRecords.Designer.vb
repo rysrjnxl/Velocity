@@ -240,7 +240,7 @@ Partial Class CustomerRecords
         '
         'SearchBarTxtBx
         '
-        Me.SearchBarTxtBx.BorderRadius = 20
+        Me.SearchBarTxtBx.BorderRadius = 10
         Me.SearchBarTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.SearchBarTxtBx.DefaultText = ""
         Me.SearchBarTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
