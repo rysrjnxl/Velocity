@@ -27,12 +27,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0EF18AEFD0BC47A9B1E6E16829F12CEA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_11AA6E7A44097AA54061DDC90D838FA2"
         "OwnerKey" = "8:_7B1982DB97C4588ADB912D89E236A16A"
         "MsmSig" = "8:_UNDEFINED"
@@ -123,12 +117,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_454EAFE55997420489DD0679E309125D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_47E7A6A6C8C6FEB785145AC6BEED6242"
         "OwnerKey" = "8:_BA59E4EAD02E441CABAA0C2E7381707E"
         "MsmSig" = "8:_UNDEFINED"
@@ -213,12 +201,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7C63D44634D64F60B5671283D91BD35D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8002DBA55FD0549A884CB036F38D85A4"
         "OwnerKey" = "8:_4980ABA947477B0A4E323E323FFDDE9F"
         "MsmSig" = "8:_UNDEFINED"
@@ -280,12 +262,6 @@
         "Entry"
         {
         "MsmKey" = "8:_BA59E4EAD02E441CABAA0C2E7381707E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C4A96D43F81C4DC696D0FA17CC868EDE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -571,26 +547,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0EF18AEFD0BC47A9B1E6E16829F12CEA"
-            {
-            "SourcePath" = "8:..\\..\\Icons\\vlogo.png"
-            "TargetName" = "8:vlogo.png"
-            "Tag" = "8:"
-            "Folder" = "8:_E3B50782B8094C91B35C992A2F43E045"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_11AA6E7A44097AA54061DDC90D838FA2"
             {
             "AssemblyRegister" = "3:1"
@@ -682,26 +638,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_454EAFE55997420489DD0679E309125D"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\..\\Downloads\\vlogo.ico"
-            "TargetName" = "8:vlogo.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_E3B50782B8094C91B35C992A2F43E045"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_47E7A6A6C8C6FEB785145AC6BEED6242"
@@ -826,26 +762,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7C63D44634D64F60B5671283D91BD35D"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\..\\Downloads\\vlogo (2).ico"
-            "TargetName" = "8:vlogo (2).ico"
-            "Tag" = "8:"
-            "Folder" = "8:_E3B50782B8094C91B35C992A2F43E045"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8002DBA55FD0549A884CB036F38D85A4"
@@ -1063,26 +979,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4A96D43F81C4DC696D0FA17CC868EDE"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\..\\Downloads\\vlogo (1).ico"
-            "TargetName" = "8:vlogo (1).ico"
-            "Tag" = "8:"
-            "Folder" = "8:_E3B50782B8094C91B35C992A2F43E045"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E4391A2D8BE1837ED0B98DDC3F72BB63"

@@ -39,6 +39,11 @@ Partial Class RentTransaction
         Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.RentDate = New System.Windows.Forms.DateTimePicker()
         Me.CancelBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DestinationTxtBx = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.BabySitChkBx = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.PrintContractBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -110,7 +115,7 @@ Partial Class RentTransaction
         Me.CustomerCmbx.HoverState.Parent = Me.CustomerCmbx
         Me.CustomerCmbx.ItemHeight = 30
         Me.CustomerCmbx.ItemsAppearance.Parent = Me.CustomerCmbx
-        Me.CustomerCmbx.Location = New System.Drawing.Point(267, 191)
+        Me.CustomerCmbx.Location = New System.Drawing.Point(277, 156)
         Me.CustomerCmbx.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CustomerCmbx.Name = "CustomerCmbx"
         Me.CustomerCmbx.ShadowDecoration.Parent = Me.CustomerCmbx
@@ -121,7 +126,7 @@ Partial Class RentTransaction
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(57, 200)
+        Me.Label1.Location = New System.Drawing.Point(57, 165)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(191, 19)
         Me.Label1.TabIndex = 2
@@ -131,7 +136,7 @@ Partial Class RentTransaction
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(57, 286)
+        Me.Label2.Location = New System.Drawing.Point(57, 242)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(131, 19)
         Me.Label2.TabIndex = 3
@@ -151,7 +156,7 @@ Partial Class RentTransaction
         Me.CarModelCmbx.HoverState.Parent = Me.CarModelCmbx
         Me.CarModelCmbx.ItemHeight = 30
         Me.CarModelCmbx.ItemsAppearance.Parent = Me.CarModelCmbx
-        Me.CarModelCmbx.Location = New System.Drawing.Point(267, 277)
+        Me.CarModelCmbx.Location = New System.Drawing.Point(277, 233)
         Me.CarModelCmbx.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CarModelCmbx.Name = "CarModelCmbx"
         Me.CarModelCmbx.ShadowDecoration.Parent = Me.CarModelCmbx
@@ -162,7 +167,7 @@ Partial Class RentTransaction
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(57, 368)
+        Me.Label3.Location = New System.Drawing.Point(57, 406)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(133, 19)
         Me.Label3.TabIndex = 7
@@ -172,7 +177,7 @@ Partial Class RentTransaction
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(57, 435)
+        Me.Label4.Location = New System.Drawing.Point(57, 479)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(162, 19)
         Me.Label4.TabIndex = 8
@@ -180,6 +185,7 @@ Partial Class RentTransaction
         '
         'TotalCostTxtbx
         '
+        Me.TotalCostTxtbx.BackColor = System.Drawing.Color.Transparent
         Me.TotalCostTxtbx.BorderRadius = 5
         Me.TotalCostTxtbx.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TotalCostTxtbx.DefaultText = ""
@@ -193,7 +199,7 @@ Partial Class RentTransaction
         Me.TotalCostTxtbx.Font = New System.Drawing.Font("Segoe UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TotalCostTxtbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TotalCostTxtbx.HoverState.Parent = Me.TotalCostTxtbx
-        Me.TotalCostTxtbx.Location = New System.Drawing.Point(267, 612)
+        Me.TotalCostTxtbx.Location = New System.Drawing.Point(277, 654)
         Me.TotalCostTxtbx.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TotalCostTxtbx.Name = "TotalCostTxtbx"
         Me.TotalCostTxtbx.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -208,7 +214,7 @@ Partial Class RentTransaction
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(57, 636)
+        Me.Label5.Location = New System.Drawing.Point(57, 669)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(146, 19)
         Me.Label5.TabIndex = 10
@@ -223,11 +229,11 @@ Partial Class RentTransaction
         Me.ConfirmBtn.Font = New System.Drawing.Font("ROG Fonts", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ConfirmBtn.ForeColor = System.Drawing.Color.White
         Me.ConfirmBtn.HoverState.Parent = Me.ConfirmBtn
-        Me.ConfirmBtn.Location = New System.Drawing.Point(462, 821)
+        Me.ConfirmBtn.Location = New System.Drawing.Point(612, 834)
         Me.ConfirmBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ConfirmBtn.Name = "ConfirmBtn"
         Me.ConfirmBtn.ShadowDecoration.Parent = Me.ConfirmBtn
-        Me.ConfirmBtn.Size = New System.Drawing.Size(269, 56)
+        Me.ConfirmBtn.Size = New System.Drawing.Size(198, 56)
         Me.ConfirmBtn.TabIndex = 11
         Me.ConfirmBtn.Text = "Confirm Transaction"
         '
@@ -235,7 +241,7 @@ Partial Class RentTransaction
         '
         Me.ReturnDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.ReturnDate.Location = New System.Drawing.Point(267, 435)
+        Me.ReturnDate.Location = New System.Drawing.Point(277, 470)
         Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(300, 28)
@@ -245,7 +251,7 @@ Partial Class RentTransaction
         '
         Me.RentDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RentDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.RentDate.Location = New System.Drawing.Point(267, 368)
+        Me.RentDate.Location = New System.Drawing.Point(277, 397)
         Me.RentDate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RentDate.Name = "RentDate"
         Me.RentDate.Size = New System.Drawing.Size(300, 28)
@@ -260,19 +266,96 @@ Partial Class RentTransaction
         Me.CancelBtn.Font = New System.Drawing.Font("ROG Fonts", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CancelBtn.ForeColor = System.Drawing.Color.White
         Me.CancelBtn.HoverState.Parent = Me.CancelBtn
-        Me.CancelBtn.Location = New System.Drawing.Point(61, 821)
+        Me.CancelBtn.Location = New System.Drawing.Point(38, 834)
         Me.CancelBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CancelBtn.Name = "CancelBtn"
         Me.CancelBtn.ShadowDecoration.Parent = Me.CancelBtn
-        Me.CancelBtn.Size = New System.Drawing.Size(269, 56)
+        Me.CancelBtn.Size = New System.Drawing.Size(199, 56)
         Me.CancelBtn.TabIndex = 14
         Me.CancelBtn.Text = "Cancel Transaction"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(57, 328)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(151, 19)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "Destination:"
+        '
+        'DestinationTxtBx
+        '
+        Me.DestinationTxtBx.BorderRadius = 5
+        Me.DestinationTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.DestinationTxtBx.DefaultText = ""
+        Me.DestinationTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.DestinationTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.DestinationTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.DestinationTxtBx.DisabledState.Parent = Me.DestinationTxtBx
+        Me.DestinationTxtBx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.DestinationTxtBx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DestinationTxtBx.FocusedState.Parent = Me.DestinationTxtBx
+        Me.DestinationTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DestinationTxtBx.HoverState.Parent = Me.DestinationTxtBx
+        Me.DestinationTxtBx.Location = New System.Drawing.Point(277, 313)
+        Me.DestinationTxtBx.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.DestinationTxtBx.Name = "DestinationTxtBx"
+        Me.DestinationTxtBx.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.DestinationTxtBx.PlaceholderText = ""
+        Me.DestinationTxtBx.SelectedText = ""
+        Me.DestinationTxtBx.ShadowDecoration.Parent = Me.DestinationTxtBx
+        Me.DestinationTxtBx.Size = New System.Drawing.Size(464, 55)
+        Me.DestinationTxtBx.TabIndex = 16
+        '
+        'BabySitChkBx
+        '
+        Me.BabySitChkBx.AutoSize = True
+        Me.BabySitChkBx.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BabySitChkBx.Location = New System.Drawing.Point(277, 550)
+        Me.BabySitChkBx.Name = "BabySitChkBx"
+        Me.BabySitChkBx.Size = New System.Drawing.Size(245, 29)
+        Me.BabySitChkBx.TabIndex = 17
+        Me.BabySitChkBx.Text = "Baby/Child Seat (₱150)"
+        Me.BabySitChkBx.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(57, 554)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(109, 19)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Add-ons:"
+        '
+        'PrintContractBtn
+        '
+        Me.PrintContractBtn.BorderRadius = 5
+        Me.PrintContractBtn.CheckedState.Parent = Me.PrintContractBtn
+        Me.PrintContractBtn.CustomImages.Parent = Me.PrintContractBtn
+        Me.PrintContractBtn.FillColor = System.Drawing.SystemColors.GrayText
+        Me.PrintContractBtn.Font = New System.Drawing.Font("ROG Fonts", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PrintContractBtn.ForeColor = System.Drawing.Color.White
+        Me.PrintContractBtn.HoverState.Parent = Me.PrintContractBtn
+        Me.PrintContractBtn.Location = New System.Drawing.Point(328, 834)
+        Me.PrintContractBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PrintContractBtn.Name = "PrintContractBtn"
+        Me.PrintContractBtn.ShadowDecoration.Parent = Me.PrintContractBtn
+        Me.PrintContractBtn.Size = New System.Drawing.Size(199, 56)
+        Me.PrintContractBtn.TabIndex = 19
+        Me.PrintContractBtn.Text = "Print Contract"
         '
         'RentTransaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(846, 964)
+        Me.Controls.Add(Me.PrintContractBtn)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.BabySitChkBx)
+        Me.Controls.Add(Me.DestinationTxtBx)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.CancelBtn)
         Me.Controls.Add(Me.RentDate)
         Me.Controls.Add(Me.ReturnDate)
@@ -314,4 +397,9 @@ Partial Class RentTransaction
     Friend WithEvents RentDate As DateTimePicker
     Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DestinationTxtBx As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents BabySitChkBx As CheckBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents PrintContractBtn As Guna.UI2.WinForms.Guna2Button
 End Class
