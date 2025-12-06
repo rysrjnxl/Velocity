@@ -24,12 +24,10 @@ Partial Class ReturnCar
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ReturnCarGrid = New System.Windows.Forms.DataGridView()
-        Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.LateFeetxtbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Totaltxtbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ConfirmBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.CancelBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         CType(Me.ReturnCarGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,15 +50,6 @@ Partial Class ReturnCar
         Me.ReturnCarGrid.RowTemplate.Height = 24
         Me.ReturnCarGrid.Size = New System.Drawing.Size(1080, 429)
         Me.ReturnCarGrid.TabIndex = 1
-        '
-        'ReturnDate
-        '
-        Me.ReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.ReturnDate.Location = New System.Drawing.Point(162, 601)
-        Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.ReturnDate.Name = "ReturnDate"
-        Me.ReturnDate.Size = New System.Drawing.Size(224, 26)
-        Me.ReturnDate.TabIndex = 2
         '
         'LateFeetxtbx
         '
@@ -146,16 +135,6 @@ Partial Class ReturnCar
         Me.CancelBtn.TabIndex = 6
         Me.CancelBtn.Text = "Cancel"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("ROG Fonts", 7.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(159, 574)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(350, 19)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Select Date Car is Returned:"
-        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -173,12 +152,10 @@ Partial Class ReturnCar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1440, 900)
         Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CancelBtn)
         Me.Controls.Add(Me.ConfirmBtn)
         Me.Controls.Add(Me.Totaltxtbx)
         Me.Controls.Add(Me.LateFeetxtbx)
-        Me.Controls.Add(Me.ReturnDate)
         Me.Controls.Add(Me.ReturnCarGrid)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -193,11 +170,9 @@ Partial Class ReturnCar
 
     Friend WithEvents Label1 As Label
     Friend WithEvents ReturnCarGrid As DataGridView
-    Friend WithEvents ReturnDate As DateTimePicker
     Friend WithEvents LateFeetxtbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Totaltxtbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents ConfirmBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label21 As Label
 End Class

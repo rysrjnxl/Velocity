@@ -17,10 +17,6 @@ Public Class ReturnCar
 
         LoadActiveRentals()
 
-        ReturnDate.Enabled = False
-        ReturnDate.Format = DateTimePickerFormat.Custom
-        ReturnDate.CustomFormat = " "
-        ReturnDate.Value = DateTime.Now
     End Sub
 
     Private Sub LoadActiveRentals()
@@ -73,34 +69,20 @@ Public Class ReturnCar
             CurrentTotal = Convert.ToDecimal(row.Cells("total_price").Value)
             DailyRate = Convert.ToDecimal(row.Cells("daily_rate").Value)
 
-            ReturnDate.Enabled = True
-            ReturnDate.Format = DateTimePickerFormat.Short
-            ReturnDate.Value = DateTime.Now
 
             CalculateLateFee()
             ConfirmBtn.Enabled = True
         End If
     End Sub
 
-    Private Sub ReturnDate_ValueChanged(sender As Object, e As EventArgs) Handles ReturnDate.ValueChanged
+    Private Sub ReturnDate_ValueChanged(sender As Object, e As EventArgs)
         CalculateLateFee()
     End Sub
 
     Private Sub CalculateLateFee()
         If SelectedRentalID = 0 Then Exit Sub
 
-        Dim daysLate As Integer = (ReturnDate.Value.Date - DueDate.Date).Days
         Dim lateFee As Decimal = 0
-
-        If daysLate > 0 Then
-            lateFee = daysLate * DailyRate
-            LateFeetxtbx.Text = "Late Fee (" & daysLate & " days): ₱" & lateFee.ToString("N2")
-            LateFeetxtbx.ForeColor = Color.Red
-        Else
-            lateFee = 0
-            LateFeetxtbx.Text = "Late Fee: ₱0.00"
-            LateFeetxtbx.ForeColor = Color.Black
-        End If
 
         Dim finalTotal As Decimal = CurrentTotal + lateFee
         Totaltxtbx.Text = "Final Total: ₱" & finalTotal.ToString("N2")
@@ -138,10 +120,6 @@ Public Class ReturnCar
             LateFeetxtbx.Text = "Late Fee: ₱0.00"
             Totaltxtbx.Text = "Final Total: ₱0.00"
             ConfirmBtn.Enabled = False
-
-            ReturnDate.Enabled = False
-            ReturnDate.Format = DateTimePickerFormat.Custom
-            ReturnDate.CustomFormat = " "
 
             LoadActiveRentals()
 
