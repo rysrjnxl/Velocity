@@ -257,5 +257,8 @@
   <ItemGroup>
     <None Include="Resources\vlogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vlogo_outlined.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

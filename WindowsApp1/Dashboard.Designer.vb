@@ -25,28 +25,28 @@ Partial Class Dashboard
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.DashboardPic_Panel = New System.Windows.Forms.FlowLayoutPanel()
         Me.ScorecardPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.DashboardBGPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.DashboardPic = New System.Windows.Forms.PictureBox()
         Me.TotalCarsPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.AvailableCarsPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.RentedCarsPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.MostRentedPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TotalCarsLbl = New System.Windows.Forms.Label()
+        Me.AvailableCarsPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.CarsAvailableLbl = New System.Windows.Forms.Label()
+        Me.RentedCarsPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.RentedCarsLbl = New System.Windows.Forms.Label()
+        Me.MostRentedPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.MostRentedCarLbl = New System.Windows.Forms.Label()
+        Me.DashboardBGPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.DashboardPic = New System.Windows.Forms.PictureBox()
         Me.ScorecardPanel.SuspendLayout()
-        Me.DashboardBGPanel.SuspendLayout()
-        CType(Me.DashboardPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TotalCarsPanel.SuspendLayout()
         Me.AvailableCarsPanel.SuspendLayout()
         Me.RentedCarsPanel.SuspendLayout()
         Me.MostRentedPanel.SuspendLayout()
+        Me.DashboardBGPanel.SuspendLayout()
+        CType(Me.DashboardPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DashboardPic_Panel
@@ -76,6 +76,140 @@ Partial Class Dashboard
         Me.ScorecardPanel.Size = New System.Drawing.Size(1361, 179)
         Me.ScorecardPanel.TabIndex = 9
         '
+        'TotalCarsPanel
+        '
+        Me.TotalCarsPanel.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.TotalCarsPanel.Controls.Add(Me.Guna2HtmlLabel5)
+        Me.TotalCarsPanel.Controls.Add(Me.TotalCarsLbl)
+        Me.TotalCarsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.TotalCarsPanel.Location = New System.Drawing.Point(3, 3)
+        Me.TotalCarsPanel.Name = "TotalCarsPanel"
+        Me.TotalCarsPanel.Size = New System.Drawing.Size(331, 176)
+        Me.TotalCarsPanel.TabIndex = 0
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("ROG Fonts", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(198, 31)
+        Me.Guna2HtmlLabel1.TabIndex = 0
+        Me.Guna2HtmlLabel1.Text = "Total Cars"
+        '
+        'Guna2HtmlLabel5
+        '
+        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(3, 40)
+        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(0, 0)
+        Me.Guna2HtmlLabel5.TabIndex = 1
+        Me.Guna2HtmlLabel5.Text = Nothing
+        '
+        'TotalCarsLbl
+        '
+        Me.TotalCarsLbl.AutoSize = True
+        Me.TotalCarsLbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TotalCarsLbl.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TotalCarsLbl.Location = New System.Drawing.Point(3, 43)
+        Me.TotalCarsLbl.Name = "TotalCarsLbl"
+        Me.TotalCarsLbl.Size = New System.Drawing.Size(198, 58)
+        Me.TotalCarsLbl.TabIndex = 2
+        '
+        'AvailableCarsPanel
+        '
+        Me.AvailableCarsPanel.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.AvailableCarsPanel.Controls.Add(Me.CarsAvailableLbl)
+        Me.AvailableCarsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.AvailableCarsPanel.Location = New System.Drawing.Point(340, 3)
+        Me.AvailableCarsPanel.Name = "AvailableCarsPanel"
+        Me.AvailableCarsPanel.Size = New System.Drawing.Size(331, 176)
+        Me.AvailableCarsPanel.TabIndex = 1
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("ROG Fonts", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(262, 31)
+        Me.Guna2HtmlLabel2.TabIndex = 0
+        Me.Guna2HtmlLabel2.Text = "Available Cars"
+        '
+        'CarsAvailableLbl
+        '
+        Me.CarsAvailableLbl.AutoSize = True
+        Me.CarsAvailableLbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CarsAvailableLbl.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CarsAvailableLbl.Location = New System.Drawing.Point(3, 37)
+        Me.CarsAvailableLbl.Name = "CarsAvailableLbl"
+        Me.CarsAvailableLbl.Size = New System.Drawing.Size(262, 58)
+        Me.CarsAvailableLbl.TabIndex = 3
+        '
+        'RentedCarsPanel
+        '
+        Me.RentedCarsPanel.Controls.Add(Me.Guna2HtmlLabel3)
+        Me.RentedCarsPanel.Controls.Add(Me.RentedCarsLbl)
+        Me.RentedCarsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.RentedCarsPanel.Location = New System.Drawing.Point(677, 3)
+        Me.RentedCarsPanel.Name = "RentedCarsPanel"
+        Me.RentedCarsPanel.Size = New System.Drawing.Size(331, 176)
+        Me.RentedCarsPanel.TabIndex = 2
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("ROG Fonts", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(219, 31)
+        Me.Guna2HtmlLabel3.TabIndex = 1
+        Me.Guna2HtmlLabel3.Text = "Rented Cars"
+        '
+        'RentedCarsLbl
+        '
+        Me.RentedCarsLbl.AutoSize = True
+        Me.RentedCarsLbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RentedCarsLbl.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RentedCarsLbl.Location = New System.Drawing.Point(3, 37)
+        Me.RentedCarsLbl.Name = "RentedCarsLbl"
+        Me.RentedCarsLbl.Size = New System.Drawing.Size(219, 58)
+        Me.RentedCarsLbl.TabIndex = 4
+        '
+        'MostRentedPanel
+        '
+        Me.MostRentedPanel.Controls.Add(Me.Guna2HtmlLabel4)
+        Me.MostRentedPanel.Controls.Add(Me.MostRentedCarLbl)
+        Me.MostRentedPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.MostRentedPanel.Location = New System.Drawing.Point(1014, 3)
+        Me.MostRentedPanel.Name = "MostRentedPanel"
+        Me.MostRentedPanel.Size = New System.Drawing.Size(331, 176)
+        Me.MostRentedPanel.TabIndex = 2
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("ROG Fonts", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(243, 26)
+        Me.Guna2HtmlLabel4.TabIndex = 2
+        Me.Guna2HtmlLabel4.Text = "Most Rented Car"
+        '
+        'MostRentedCarLbl
+        '
+        Me.MostRentedCarLbl.AutoSize = True
+        Me.MostRentedCarLbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MostRentedCarLbl.Font = New System.Drawing.Font("ROG Fonts", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MostRentedCarLbl.Location = New System.Drawing.Point(3, 32)
+        Me.MostRentedCarLbl.Name = "MostRentedCarLbl"
+        Me.MostRentedCarLbl.Size = New System.Drawing.Size(243, 43)
+        Me.MostRentedCarLbl.TabIndex = 4
+        '
         'DashboardBGPanel
         '
         Me.DashboardBGPanel.BackColor = System.Drawing.Color.WhiteSmoke
@@ -99,139 +233,6 @@ Partial Class Dashboard
         Me.DashboardPic.TabIndex = 0
         Me.DashboardPic.TabStop = False
         '
-        'TotalCarsPanel
-        '
-        Me.TotalCarsPanel.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.TotalCarsPanel.Controls.Add(Me.Guna2HtmlLabel5)
-        Me.TotalCarsPanel.Controls.Add(Me.TotalCarsLbl)
-        Me.TotalCarsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.TotalCarsPanel.Location = New System.Drawing.Point(3, 3)
-        Me.TotalCarsPanel.Name = "TotalCarsPanel"
-        Me.TotalCarsPanel.Size = New System.Drawing.Size(331, 176)
-        Me.TotalCarsPanel.TabIndex = 0
-        '
-        'AvailableCarsPanel
-        '
-        Me.AvailableCarsPanel.Controls.Add(Me.Guna2HtmlLabel2)
-        Me.AvailableCarsPanel.Controls.Add(Me.CarsAvailableLbl)
-        Me.AvailableCarsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.AvailableCarsPanel.Location = New System.Drawing.Point(340, 3)
-        Me.AvailableCarsPanel.Name = "AvailableCarsPanel"
-        Me.AvailableCarsPanel.Size = New System.Drawing.Size(331, 176)
-        Me.AvailableCarsPanel.TabIndex = 1
-        '
-        'RentedCarsPanel
-        '
-        Me.RentedCarsPanel.Controls.Add(Me.Guna2HtmlLabel3)
-        Me.RentedCarsPanel.Controls.Add(Me.RentedCarsLbl)
-        Me.RentedCarsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.RentedCarsPanel.Location = New System.Drawing.Point(677, 3)
-        Me.RentedCarsPanel.Name = "RentedCarsPanel"
-        Me.RentedCarsPanel.Size = New System.Drawing.Size(331, 176)
-        Me.RentedCarsPanel.TabIndex = 2
-        '
-        'MostRentedPanel
-        '
-        Me.MostRentedPanel.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.MostRentedPanel.Controls.Add(Me.MostRentedCarLbl)
-        Me.MostRentedPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.MostRentedPanel.Location = New System.Drawing.Point(1014, 3)
-        Me.MostRentedPanel.Name = "MostRentedPanel"
-        Me.MostRentedPanel.Size = New System.Drawing.Size(331, 176)
-        Me.MostRentedPanel.TabIndex = 2
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("ROG Fonts", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(198, 31)
-        Me.Guna2HtmlLabel1.TabIndex = 0
-        Me.Guna2HtmlLabel1.Text = "Total Cars"
-        '
-        'Guna2HtmlLabel2
-        '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("ROG Fonts", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(262, 31)
-        Me.Guna2HtmlLabel2.TabIndex = 0
-        Me.Guna2HtmlLabel2.Text = "Available Cars"
-        '
-        'Guna2HtmlLabel3
-        '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("ROG Fonts", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(219, 31)
-        Me.Guna2HtmlLabel3.TabIndex = 1
-        Me.Guna2HtmlLabel3.Text = "Rented Cars"
-        '
-        'Guna2HtmlLabel4
-        '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("ROG Fonts", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(243, 26)
-        Me.Guna2HtmlLabel4.TabIndex = 2
-        Me.Guna2HtmlLabel4.Text = "Most Rented Car"
-        '
-        'Guna2HtmlLabel5
-        '
-        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(3, 40)
-        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(3, 2)
-        Me.Guna2HtmlLabel5.TabIndex = 1
-        '
-        'TotalCarsLbl
-        '
-        Me.TotalCarsLbl.AutoSize = True
-        Me.TotalCarsLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TotalCarsLbl.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TotalCarsLbl.Location = New System.Drawing.Point(3, 45)
-        Me.TotalCarsLbl.Name = "TotalCarsLbl"
-        Me.TotalCarsLbl.Size = New System.Drawing.Size(198, 58)
-        Me.TotalCarsLbl.TabIndex = 2
-        '
-        'CarsAvailableLbl
-        '
-        Me.CarsAvailableLbl.AutoSize = True
-        Me.CarsAvailableLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CarsAvailableLbl.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CarsAvailableLbl.Location = New System.Drawing.Point(3, 37)
-        Me.CarsAvailableLbl.Name = "CarsAvailableLbl"
-        Me.CarsAvailableLbl.Size = New System.Drawing.Size(262, 58)
-        Me.CarsAvailableLbl.TabIndex = 3
-        '
-        'RentedCarsLbl
-        '
-        Me.RentedCarsLbl.AutoSize = True
-        Me.RentedCarsLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RentedCarsLbl.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RentedCarsLbl.Location = New System.Drawing.Point(3, 37)
-        Me.RentedCarsLbl.Name = "RentedCarsLbl"
-        Me.RentedCarsLbl.Size = New System.Drawing.Size(219, 58)
-        Me.RentedCarsLbl.TabIndex = 4
-        '
-        'MostRentedCarLbl
-        '
-        Me.MostRentedCarLbl.AutoSize = True
-        Me.MostRentedCarLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MostRentedCarLbl.Font = New System.Drawing.Font("ROG Fonts", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MostRentedCarLbl.Location = New System.Drawing.Point(3, 32)
-        Me.MostRentedCarLbl.Name = "MostRentedCarLbl"
-        Me.MostRentedCarLbl.Size = New System.Drawing.Size(243, 43)
-        Me.MostRentedCarLbl.TabIndex = 4
-        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -247,8 +248,6 @@ Partial Class Dashboard
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashbard"
         Me.ScorecardPanel.ResumeLayout(False)
-        Me.DashboardBGPanel.ResumeLayout(False)
-        CType(Me.DashboardPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TotalCarsPanel.ResumeLayout(False)
         Me.TotalCarsPanel.PerformLayout()
         Me.AvailableCarsPanel.ResumeLayout(False)
@@ -257,6 +256,8 @@ Partial Class Dashboard
         Me.RentedCarsPanel.PerformLayout()
         Me.MostRentedPanel.ResumeLayout(False)
         Me.MostRentedPanel.PerformLayout()
+        Me.DashboardBGPanel.ResumeLayout(False)
+        CType(Me.DashboardPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

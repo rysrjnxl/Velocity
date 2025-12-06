@@ -2,30 +2,23 @@
 Imports System.Drawing.Printing
 
 Public Class RentTransaction
-    ' Properties
     Public Property InitialCarSelection As String
     Private DailyRate As Decimal = 0
 
-    ' Printing
     Private WithEvents PrintDoc As New PrintDocument()
 
     Private Sub RentTransaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Theme.ApplyThemeToForm(Me)
 
-        ' 1. Load Customers
         LoadCustomers()
 
-        ' 2. Set Default Dates (Start with Today)
         RentDate.Value = DateTime.Now
         ReturnDate.Value = DateTime.Now.AddDays(1)
 
-        ' 3. Load Cars (Smart Check)
         LoadAvailableCars()
 
-        ' 4. Pre-select from Dashboard if applicable
         If Not String.IsNullOrEmpty(InitialCarSelection) Then
             Dim dt As DataTable = CType(CarModelCmbx.DataSource, DataTable)
-            ' Check if the passed car exists in the loaded list
             Dim rows = dt.Select("car_model = '" & InitialCarSelection & "'")
 
             If rows.Length > 0 Then
@@ -34,9 +27,7 @@ Public Class RentTransaction
         End If
     End Sub
 
-    ' --- 1. LOAD AVAILABLE CARS (With Selection Memory) ---
     Private Sub LoadAvailableCars()
-        ' A. Save the currently selected car (so we don't lose it when dates change)
         Dim currentSelection As String = ""
         If CarModelCmbx.SelectedValue IsNot Nothing Then
             currentSelection = CarModelCmbx.SelectedValue.ToString()
@@ -45,7 +36,6 @@ Public Class RentTransaction
         Using conn As New MySqlConnection(ConnectDatabase)
             Try
                 conn.Open()
-                ' Get cars NOT booked for the selected dates
                 Dim query As String = "SELECT car_model FROM cars " &
                                       "WHERE car_model NOT IN (" &
                                       "    SELECT car_model FROM rentals " &
@@ -63,26 +53,21 @@ Public Class RentTransaction
                 Dim dt As New DataTable()
                 da.Fill(dt)
 
-                ' Add Dummy Row
                 Dim row As DataRow = dt.NewRow()
                 row("car_model") = "-- Select Car --"
                 dt.Rows.InsertAt(row, 0)
 
-                ' Update DataSource
                 CarModelCmbx.DataSource = dt
                 CarModelCmbx.DisplayMember = "car_model"
                 CarModelCmbx.ValueMember = "car_model"
 
-                ' B. Restore Selection (The "Don't Reset" Logic)
-                ' Check if the car we had selected is still available in the new list
                 Dim foundRows = dt.Select("car_model = '" & currentSelection & "'")
 
                 If foundRows.Length > 0 AndAlso currentSelection <> "-- Select Car --" Then
                     CarModelCmbx.SelectedValue = currentSelection
                 Else
-                    ' If it's no longer available (or was empty), reset to default
                     CarModelCmbx.SelectedIndex = 0
-                    DailyRate = 0 ' Reset rate since selection is lost
+                    DailyRate = 0
                 End If
 
             Catch ex As Exception
@@ -91,23 +76,19 @@ Public Class RentTransaction
         End Using
     End Sub
 
-    ' --- 2. DATE VALIDATION & LOGIC ---
     Private Sub RentDate_ValueChanged(sender As Object, e As EventArgs) Handles RentDate.ValueChanged, ReturnDate.ValueChanged
-        ' A. Check if Rent Date is in the past
         If RentDate.Value.Date < DateTime.Now.Date Then
             MessageBox.Show("Rent date cannot be in the past.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             RentDate.Value = DateTime.Now
             Return
         End If
 
-        ' B. Check if Return Date is before Rent Date
         If ReturnDate.Value.Date < RentDate.Value.Date Then
             MessageBox.Show("Return date cannot be before rent date.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             ReturnDate.Value = RentDate.Value.AddDays(1)
             Return
         End If
 
-        ' C. Max 7 Days Logic
         Dim days As Integer = (ReturnDate.Value.Date - RentDate.Value.Date).Days
         If days > 7 Then
             MessageBox.Show("Maximum rental period is 7 days.", "Duration Limit", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -115,14 +96,11 @@ Public Class RentTransaction
             Return
         End If
 
-        ' Refresh List (will try to keep current car selected)
         LoadAvailableCars()
         CalculatePrice()
     End Sub
 
-    ' --- 3. PRICE CALCULATION (Live Updates) ---
     Private Sub CalculatePrice()
-        ' Only calculate if a valid car is selected
         If DailyRate = 0 OrElse CarModelCmbx.SelectedIndex = 0 Then
             TotalCostTxtbx.Text = "0.00"
             Exit Sub
@@ -131,10 +109,8 @@ Public Class RentTransaction
         Dim days As Integer = (ReturnDate.Value.Date - RentDate.Value.Date).Days
         If days <= 0 Then days = 1
 
-        ' Base Cost
         Dim carCost As Decimal = days * DailyRate
 
-        ' Baby Seat Cost
         Dim extraCost As Decimal = 0
         If BabySitChkBx.Checked Then
             extraCost = 150.0
@@ -144,12 +120,10 @@ Public Class RentTransaction
         TotalCostTxtbx.Text = total.ToString("N2")
     End Sub
 
-    ' Event: Update Price when Baby Seat is toggled
     Private Sub BabySitChkBx_CheckedChanged(sender As Object, e As EventArgs) Handles BabySitChkBx.CheckedChanged
         CalculatePrice()
     End Sub
 
-    ' --- 4. CAR SELECTION HANDLING ---
     Private Sub CarModelCmbx_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CarModelCmbx.SelectedIndexChanged
         If TypeOf CarModelCmbx.SelectedValue Is DataRowView OrElse CarModelCmbx.SelectedValue Is Nothing Then Exit Sub
 
@@ -175,21 +149,17 @@ Public Class RentTransaction
         End Using
     End Sub
 
-    ' --- 5. SHARED VALIDATION FUNCTION ---
     Private Function ValidateTransaction() As Boolean
-        ' 1. Check Customer
         If CustomerCmbx.SelectedValue Is Nothing OrElse Convert.ToInt32(CustomerCmbx.SelectedValue) = 0 Then
             MessageBox.Show("Please select a Customer.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
 
-        ' 2. Check Car
         If CarModelCmbx.SelectedValue Is Nothing OrElse CarModelCmbx.SelectedValue.ToString() = "-- Select Car --" Then
             MessageBox.Show("Please select a Car.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
         End If
 
-        ' 3. Check Destination
         If DestinationTxtBx.Text.Trim() = "" Then
             MessageBox.Show("Please enter a Destination.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return False
@@ -198,9 +168,7 @@ Public Class RentTransaction
         Return True
     End Function
 
-    ' --- 6. PRINT BUTTON (Print First) ---
     Private Sub PrintContractBtn_Click(sender As Object, e As EventArgs) Handles PrintContractBtn.Click
-        ' Validate fields before printing
         If ValidateTransaction() = False Then Exit Sub
 
         Dim ppd As New PrintPreviewDialog()
@@ -208,13 +176,10 @@ Public Class RentTransaction
         ppd.ShowDialog()
     End Sub
 
-    ' --- 7. CONFIRM BUTTON (Save Later) ---
     Private Sub ConfirmBtn_Click(sender As Object, e As EventArgs) Handles ConfirmBtn.Click
-        ' Validate fields before saving
         If ValidateTransaction() = False Then Exit Sub
 
         Try
-            ' Calculate Final Total
             Dim finalTotal As Decimal = Decimal.Parse(TotalCostTxtbx.Text)
 
             Using conn As New MySqlConnection(ConnectDatabase)
@@ -234,7 +199,6 @@ Public Class RentTransaction
                     cmd.ExecuteNonQuery()
                 End Using
 
-                ' Update Status Only if Renting Today
                 If RentDate.Value.Date <= DateTime.Now.Date Then
                     Dim sqlUpdate As String = "UPDATE cars SET status = 'Rented' WHERE car_model = @cmodel"
                     Using cmdUpdate As New MySqlCommand(sqlUpdate, conn)
@@ -252,7 +216,6 @@ Public Class RentTransaction
         End Try
     End Sub
 
-    ' --- 8. LOAD CUSTOMERS ---
     Private Sub LoadCustomers()
         Using conn As New MySqlConnection(ConnectDatabase)
             Try
@@ -294,7 +257,7 @@ Public Class RentTransaction
 
         Try
             Dim logo As Image = My.Resources.VelocityLogo
-            g.DrawImage(logo, leftMargin, lineY, 80, 80)
+            g.DrawImage(logo, leftMargin, lineY, 80, 75)
         Catch ex As Exception
         End Try
 
