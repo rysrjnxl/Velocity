@@ -76,7 +76,7 @@ Public Class RentTransaction
         End Using
     End Sub
 
-    Private Sub RentDate_ValueChanged(sender As Object, e As EventArgs) Handles RentDate.ValueChanged, ReturnDate.ValueChanged
+    Private Sub RentDate_ValueChanged(sender As Object, e As EventArgs)
         If RentDate.Value.Date < DateTime.Now.Date Then
             MessageBox.Show("Rent date cannot be in the past.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             RentDate.Value = DateTime.Now
@@ -120,11 +120,11 @@ Public Class RentTransaction
         TotalCostTxtbx.Text = total.ToString("N2")
     End Sub
 
-    Private Sub BabySitChkBx_CheckedChanged(sender As Object, e As EventArgs) Handles BabySitChkBx.CheckedChanged
+    Private Sub BabySitChkBx_CheckedChanged(sender As Object, e As EventArgs)
         CalculatePrice()
     End Sub
 
-    Private Sub CarModelCmbx_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CarModelCmbx.SelectedIndexChanged
+    Private Sub CarModelCmbx_SelectedIndexChanged(sender As Object, e As EventArgs)
         If TypeOf CarModelCmbx.SelectedValue Is DataRowView OrElse CarModelCmbx.SelectedValue Is Nothing Then Exit Sub
 
         Dim selectedItem As String = CarModelCmbx.SelectedValue.ToString()
@@ -168,7 +168,7 @@ Public Class RentTransaction
         Return True
     End Function
 
-    Private Sub PrintContractBtn_Click(sender As Object, e As EventArgs) Handles PrintContractBtn.Click
+    Private Sub PrintContractBtn_Click(sender As Object, e As EventArgs)
         If ValidateTransaction() = False Then Exit Sub
 
         Dim ppd As New PrintPreviewDialog()
@@ -176,7 +176,7 @@ Public Class RentTransaction
         ppd.ShowDialog()
     End Sub
 
-    Private Sub ConfirmBtn_Click(sender As Object, e As EventArgs) Handles ConfirmBtn.Click
+    Private Sub ConfirmBtn_Click(sender As Object, e As EventArgs)
         If ValidateTransaction() = False Then Exit Sub
 
         Try
@@ -256,7 +256,7 @@ Public Class RentTransaction
         Dim thickPen As New Pen(Color.Black, 2)
 
         Try
-            Dim logo As Image = My.Resources.VelocityLogo
+            Dim logo As Image = My.Resources.vlogob
             g.DrawImage(logo, leftMargin, lineY, 80, 75)
         Catch ex As Exception
         End Try
