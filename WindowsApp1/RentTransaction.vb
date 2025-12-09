@@ -23,6 +23,8 @@ Public Class RentTransaction
 
             If rows.Length > 0 Then
                 CarModelCmbx.SelectedValue = InitialCarSelection
+                GetCarRate(InitialCarSelection)
+                CalculatePrice()
             End If
         End If
     End Sub
@@ -65,6 +67,7 @@ Public Class RentTransaction
                 Dim foundRows = dt.Select("car_model = '" & currentSelection & "'")
                 If foundRows.Length > 0 AndAlso currentSelection <> "-- Select Car --" Then
                     CarModelCmbx.SelectedValue = currentSelection
+                    GetCarRate(currentSelection)
                 Else
                     CarModelCmbx.SelectedIndex = 0
                     DailyRate = 0
@@ -76,7 +79,7 @@ Public Class RentTransaction
         End Using
     End Sub
 
-    Private Sub RentDate_ValueChanged(sender As Object, e As EventArgs)
+    Private Sub RentDate_ValueChanged(sender As Object, e As EventArgs) Handles RentDate.ValueChanged, ReturnDate.ValueChanged
         If RentDate.Value.Date < DateTime.Now.Date Then
             MessageBox.Show("Rent date cannot be in the past.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             RentDate.Value = DateTime.Now
@@ -113,18 +116,18 @@ Public Class RentTransaction
 
         Dim extraCost As Decimal = 0
         If BabySitChkBx.Checked Then
-            extraCost = 150.0
+            extraCost = 150D
         End If
 
         Dim total As Decimal = carCost + extraCost
         TotalCostTxtbx.Text = total.ToString("N2")
     End Sub
 
-    Private Sub BabySitChkBx_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub BabySitChkBx_CheckedChanged(sender As Object, e As EventArgs) Handles BabySitChkBx.CheckedChanged
         CalculatePrice()
     End Sub
 
-    Private Sub CarModelCmbx_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub CarModelCmbx_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CarModelCmbx.SelectedIndexChanged
         If TypeOf CarModelCmbx.SelectedValue Is DataRowView OrElse CarModelCmbx.SelectedValue Is Nothing Then Exit Sub
 
         Dim selectedItem As String = CarModelCmbx.SelectedValue.ToString()
@@ -168,7 +171,7 @@ Public Class RentTransaction
         Return True
     End Function
 
-    Private Sub PrintContractBtn_Click(sender As Object, e As EventArgs)
+    Private Sub PrintContractBtn_Click(sender As Object, e As EventArgs) Handles PrintContractBtn.Click
         If ValidateTransaction() = False Then Exit Sub
 
         Dim ppd As New PrintPreviewDialog()
@@ -176,7 +179,7 @@ Public Class RentTransaction
         ppd.ShowDialog()
     End Sub
 
-    Private Sub ConfirmBtn_Click(sender As Object, e As EventArgs)
+    Private Sub ConfirmBtn_Click(sender As Object, e As EventArgs) Handles ConfirmBtn.Click
         If ValidateTransaction() = False Then Exit Sub
 
         Try
@@ -401,6 +404,5 @@ Public Class RentTransaction
         g.DrawLine(pen, rightMargin - 250, lineY, rightMargin, lineY)
         g.DrawString("VELOCITY STAFF SIGNATURE", headerFont, blackBrush, rightMargin - 235, lineY + 5)
     End Sub
-
 
 End Class
