@@ -27,6 +27,7 @@ Partial Class Main
         Me.closeBox = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.menuTransition = New System.Windows.Forms.Timer(Me.components)
         Me.sidebarTransition = New System.Windows.Forms.Timer(Me.components)
         Me.pnLogout = New System.Windows.Forms.Panel()
@@ -44,15 +45,14 @@ Partial Class Main
         Me.pnSidebar = New System.Windows.Forms.Panel()
         Me.sidebarBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.sidebarPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1.SuspendLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnLogout.SuspendLayout()
         Me.pnAbout.SuspendLayout()
         Me.pnSettings.SuspendLayout()
         Me.pnDashboard.SuspendLayout()
         Me.pnSidebar.SuspendLayout()
         Me.sidebarPanel.SuspendLayout()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'closeBox
@@ -97,6 +97,17 @@ Partial Class Main
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(1440, 62)
         Me.Guna2Panel1.TabIndex = 0
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(12, 12)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.ShadowDecoration.Parent = Me.Guna2PictureBox2
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(39, 33)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox2.TabIndex = 3
+        Me.Guna2PictureBox2.TabStop = False
         '
         'menuTransition
         '
@@ -352,17 +363,6 @@ Partial Class Main
         Me.sidebarPanel.Size = New System.Drawing.Size(79, 838)
         Me.sidebarPanel.TabIndex = 1
         '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(12, 12)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.ShadowDecoration.Parent = Me.Guna2PictureBox2
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(39, 33)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox2.TabIndex = 3
-        Me.Guna2PictureBox2.TabStop = False
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -371,19 +371,20 @@ Partial Class Main
         Me.Controls.Add(Me.sidebarPanel)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
         Me.Guna2Panel1.ResumeLayout(False)
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnLogout.ResumeLayout(False)
         Me.pnAbout.ResumeLayout(False)
         Me.pnSettings.ResumeLayout(False)
         Me.pnDashboard.ResumeLayout(False)
         Me.pnSidebar.ResumeLayout(False)
         Me.sidebarPanel.ResumeLayout(False)
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

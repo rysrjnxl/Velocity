@@ -401,4 +401,6 @@ Public Class RentTransaction
         g.DrawLine(pen, rightMargin - 250, lineY, rightMargin, lineY)
         g.DrawString("VELOCITY STAFF SIGNATURE", headerFont, blackBrush, rightMargin - 235, lineY + 5)
     End Sub
+
+
 End Class
