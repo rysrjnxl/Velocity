@@ -91,7 +91,7 @@ Public Class ReturnCar
                     ReturnCarGrid.Columns("rent_status_disp").HeaderText = "Status"
                 End If
             Catch ex As Exception
-                MessageBox.Show("Error loading rentals: " & ex.Message)
+                MessageBox.Show("Error loading rentals: " & ex.Message, "Error")
             End Try
         End Using
     End Sub
@@ -177,11 +177,11 @@ Public Class ReturnCar
 
     Private Sub UpdateBtn_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
         If SelectedRentalID = 0 Then
-            MessageBox.Show("Please select a rental transaction first.")
+            MessageBox.Show("Please select a rental transaction first.", "Notification")
             Exit Sub
         End If
         If ExtensionDaysCount = 0 Then
-            MessageBox.Show("Please select extension days.")
+            MessageBox.Show("Please select extension days.", "Notification")
             Exit Sub
         End If
 
@@ -199,7 +199,7 @@ Public Class ReturnCar
                     cmd.ExecuteNonQuery()
                 End Using
             End Using
-            MessageBox.Show("Rental Extended Successfully!")
+            MessageBox.Show("Rental Extended Successfully!", "Notification")
             ResetForm()
             LoadActiveRentals()
         Catch ex As Exception
@@ -255,7 +255,49 @@ Public Class ReturnCar
     End Sub
 
     Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
+        If SelectedRentalID = 0 Then
+            MessageBox.Show("Please select a rental first.")
+            Exit Sub
+        End If
 
+        Dim currentStatus As String = ReturnCarGrid.CurrentRow.Cells("rent_status_disp").Value.ToString()
+
+        If currentStatus <> "Upcoming" Then
+            MessageBox.Show("Only 'Upcoming' rentals can be cancelled." & vbCrLf &
+                            "This car is currently marked as '" & currentStatus & "' and must be Returned formally.",
+                            "Cancellation Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        If MessageBox.Show("Are you sure you want to CANCEL this upcoming rental?" & vbCrLf &
+                           "This will void the transaction.",
+                           "Confirm Cancellation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+
+            Try
+                Using conn As New MySqlConnection(ConnectDatabase)
+                    conn.Open()
+
+                    Dim sqlRental As String = "UPDATE rentals SET status = 'Cancelled' WHERE rental_id = @id"
+                    Using cmd As New MySqlCommand(sqlRental, conn)
+                        cmd.Parameters.AddWithValue("@id", SelectedRentalID)
+                        cmd.ExecuteNonQuery()
+                    End Using
+
+                    Dim sqlCar As String = "UPDATE cars SET status = 'Available' WHERE car_model = @model"
+                    Using cmdCar As New MySqlCommand(sqlCar, conn)
+                        cmdCar.Parameters.AddWithValue("@model", SelectedCarModel)
+                        cmdCar.ExecuteNonQuery()
+                    End Using
+                End Using
+
+                MessageBox.Show("Rental Cancelled Successfully.", "Notification")
+                ResetForm()
+                LoadActiveRentals()
+
+            Catch ex As Exception
+                MessageBox.Show("Error cancelling rental: " & ex.Message, "Error")
+            End Try
+        End If
     End Sub
 
     Private Sub ClearBtn_Click(sender As Object, e As EventArgs) Handles ClearBtn.Click
