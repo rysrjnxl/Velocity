@@ -27,6 +27,11 @@ Public Class RentTransaction
                 CalculatePrice()
             End If
         End If
+
+        TotalCostTxtbx.Enabled = False
+        TotalCostTxtbx.DisabledState.FillColor = Color.White
+        TotalCostTxtbx.DisabledState.ForeColor = Color.Black
+        TotalCostTxtbx.DisabledState.BorderColor = Color.FromArgb(213, 218, 223)
     End Sub
 
     Private Sub LoadAvailableCars()

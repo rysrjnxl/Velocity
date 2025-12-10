@@ -87,10 +87,12 @@ Partial Class TransactionRecords
         '
         'RefreshBtn
         '
+        Me.RefreshBtn.BorderRadius = 20
         Me.RefreshBtn.CheckedState.Parent = Me.RefreshBtn
         Me.RefreshBtn.CustomImages.Parent = Me.RefreshBtn
+        Me.RefreshBtn.FillColor = System.Drawing.Color.White
         Me.RefreshBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RefreshBtn.ForeColor = System.Drawing.Color.White
+        Me.RefreshBtn.ForeColor = System.Drawing.Color.Black
         Me.RefreshBtn.HoverState.Parent = Me.RefreshBtn
         Me.RefreshBtn.Location = New System.Drawing.Point(1071, 123)
         Me.RefreshBtn.Name = "RefreshBtn"
