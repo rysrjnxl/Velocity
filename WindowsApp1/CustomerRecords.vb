@@ -13,6 +13,9 @@ Public Class CustomerRecords
         CustomerList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         CustomerList.ReadOnly = True
         CustomerList.AllowUserToAddRows = False
+        CustomerList.RowHeadersVisible = False
+        CustomerList.AllowUserToResizeColumns = False
+        CustomerList.AllowUserToResizeRows = False
 
         Theme.ApplyThemeToForm(Me)
 

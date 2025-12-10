@@ -8,7 +8,7 @@ Public Class ReturnCar
     Private DailyRate As Decimal = 0
     Private BaseTotal As Decimal = 0
 
-    ' Calculation Variables
+    ' Fee Variables for Calculation
     Private FinalExtensionFee As Decimal = 0
     Private FinalLateFee As Decimal = 0
     Private FinalTotalAmount As Decimal = 0
@@ -23,6 +23,9 @@ Public Class ReturnCar
         ReturnCarGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ReturnCarGrid.ReadOnly = True
         ReturnCarGrid.AllowUserToAddRows = False
+        ReturnCarGrid.RowHeadersVisible = False
+        ReturnCarGrid.AllowUserToResizeColumns = False
+        ReturnCarGrid.AllowUserToResizeRows = False
 
         ' 2. Setup Extension Dropdown
         ExtensionCmbBx.Items.Clear()
@@ -37,32 +40,36 @@ Public Class ReturnCar
         UpdateBtn.Enabled = False
 
         LoadActiveRentals("")
+
     End Sub
 
-    ' --- LOAD ACTIVE RENTALS (WITH SEARCH) ---
+    ' --- LOAD ACTIVE RENTALS (WITH STATUS & DATE) ---
     Private Sub LoadActiveRentals(Optional searchTerm As String = "")
         Using conn As New MySqlConnection(ConnectDatabase)
             Try
                 conn.Open()
-                ' Base Query
+                ' UPDATED QUERY:
+                ' 1. Added r.rent_date
+                ' 2. Added Logic: IF rent_date > Today THEN 'Upcoming' ELSE 'Ongoing'
                 Dim query As String = "SELECT r.rental_id, c.name AS customer_name, r.car_model, " &
+                                      "r.rent_date, " &
                                       "r.return_date AS due_date, r.total_price, car.daily_rate, " &
                                       "r.destination, " &
                                       "IF(r.baby_seat = 1, 'Yes', 'No') AS baby_seat_disp, " &
-                                      "r.extended_days " &
+                                      "r.extended_days, " &
+                                      "IF(r.rent_date > CURDATE(), 'Upcoming', 'Ongoing') AS rent_status_disp " &
                                       "FROM rentals r " &
                                       "JOIN customers c ON r.customer_id = c.customer_id " &
                                       "JOIN cars car ON r.car_model = car.car_model " &
                                       "WHERE r.status = 'Active'"
 
-                ' Add Search Filter if user typed something
+                ' Add Search Filter
                 If Not String.IsNullOrEmpty(searchTerm) Then
                     query &= " AND (c.name LIKE @search OR r.car_model LIKE @search)"
                 End If
 
                 Dim da As New MySqlDataAdapter(query, conn)
 
-                ' Add Parameter if needed
                 If Not String.IsNullOrEmpty(searchTerm) Then
                     da.SelectCommand.Parameters.AddWithValue("@search", "%" & searchTerm & "%")
                 End If
@@ -72,13 +79,17 @@ Public Class ReturnCar
 
                 ReturnCarGrid.DataSource = dt
 
-                ' Hide IDs
+                ' --- HIDE IDs ---
                 If ReturnCarGrid.Columns("rental_id") IsNot Nothing Then ReturnCarGrid.Columns("rental_id").Visible = False
                 If ReturnCarGrid.Columns("daily_rate") IsNot Nothing Then ReturnCarGrid.Columns("daily_rate").Visible = False
 
-                ' Header Formatting
+                ' --- RENAME HEADERS ---
                 If ReturnCarGrid.Columns("customer_name") IsNot Nothing Then ReturnCarGrid.Columns("customer_name").HeaderText = "Customer"
                 If ReturnCarGrid.Columns("car_model") IsNot Nothing Then ReturnCarGrid.Columns("car_model").HeaderText = "Car Model"
+
+                ' NEW: Rent Date
+                If ReturnCarGrid.Columns("rent_date") IsNot Nothing Then ReturnCarGrid.Columns("rent_date").HeaderText = "Rent Date"
+
                 If ReturnCarGrid.Columns("due_date") IsNot Nothing Then ReturnCarGrid.Columns("due_date").HeaderText = "Due Date"
                 If ReturnCarGrid.Columns("total_price") IsNot Nothing Then
                     ReturnCarGrid.Columns("total_price").HeaderText = "Base Total"
@@ -87,6 +98,27 @@ Public Class ReturnCar
                 If ReturnCarGrid.Columns("destination") IsNot Nothing Then ReturnCarGrid.Columns("destination").HeaderText = "Destination"
                 If ReturnCarGrid.Columns("baby_seat_disp") IsNot Nothing Then ReturnCarGrid.Columns("baby_seat_disp").HeaderText = "Baby Seat"
                 If ReturnCarGrid.Columns("extended_days") IsNot Nothing Then ReturnCarGrid.Columns("extended_days").HeaderText = "Ext. Days"
+
+                ' NEW: Status Column
+                If ReturnCarGrid.Columns("rent_status_disp") IsNot Nothing Then ReturnCarGrid.Columns("rent_status_disp").HeaderText = "Status"
+
+                For Each row As DataGridViewRow In ReturnCarGrid.Rows
+                    ' Get the status text
+                    Dim status As String = row.Cells("rent_status_disp").Value.ToString()
+
+                    ' Apply color ONLY to the "Status" cell
+                    If status = "Overdue" Then
+                        row.Cells("rent_status_disp").Style.ForeColor = Color.Red
+                        row.Cells("rent_status_disp").Style.SelectionForeColor = Color.Red ' Keep red even when selected
+                        row.Cells("rent_status_disp").Style.Font = New Font(ReturnCarGrid.Font, FontStyle.Bold)
+                    ElseIf status = "Upcoming" Then
+                        row.Cells("rent_status_disp").Style.ForeColor = Color.Blue
+                        row.Cells("rent_status_disp").Style.SelectionForeColor = Color.Blue
+                    ElseIf status = "Ongoing" Then
+                        row.Cells("rent_status_disp").Style.ForeColor = Color.Green
+                        row.Cells("rent_status_disp").Style.SelectionForeColor = Color.Green
+                    End If
+                Next
 
             Catch ex As Exception
                 MessageBox.Show("Error loading rentals: " & ex.Message)
@@ -110,13 +142,24 @@ Public Class ReturnCar
             BaseTotal = Convert.ToDecimal(row.Cells("total_price").Value)
             DailyRate = Convert.ToDecimal(row.Cells("daily_rate").Value)
 
-            ' Reset Extension to 0
+            ' Check if already extended
+            Dim prevExtensions As Integer = 0
+            If Not IsDBNull(row.Cells("extended_days").Value) Then
+                prevExtensions = Convert.ToInt32(row.Cells("extended_days").Value)
+            End If
+
             ExtensionCmbBx.SelectedIndex = 0
 
-            ' Enable Buttons
-            ConfirmBtn.Enabled = True
-            UpdateBtn.Enabled = True
+            ' Disable extension if limit reached
+            If prevExtensions > 0 Then
+                ExtensionCmbBx.Enabled = False
+                UpdateBtn.Enabled = False
+            Else
+                ExtensionCmbBx.Enabled = True
+                UpdateBtn.Enabled = True
+            End If
 
+            ConfirmBtn.Enabled = True
             CalculateFinalTotal()
         End If
     End Sub
@@ -135,13 +178,11 @@ Public Class ReturnCar
         FinalExtensionFee = 0
 
         If ExtensionDaysCount > 0 Then
-            ' Surcharge: Regular Rate + 20%
             Dim increasedRate As Decimal = DailyRate + (DailyRate * 0.2D)
             FinalExtensionFee = increasedRate * ExtensionDaysCount
         End If
 
         ' 2. Calculate Late Fee
-        ' Logic: Late if TODAY is after (Original Date + Extension Days)
         Dim effectiveDueDate As DateTime = OriginalDueDate.AddDays(ExtensionDaysCount)
         Dim daysLate As Integer = (DateTime.Now.Date - effectiveDueDate.Date).Days
         FinalLateFee = 0
@@ -173,12 +214,10 @@ Public Class ReturnCar
         End If
 
         Try
-            ' For extension update, we add the fee to the base total
             Dim newBaseTotal As Decimal = BaseTotal + FinalExtensionFee
 
             Using conn As New MySqlConnection(ConnectDatabase)
                 conn.Open()
-                ' Update Return Date, Price, and Extension Count
                 Dim sqlUpdate As String = "UPDATE rentals SET return_date = DATE_ADD(return_date, INTERVAL @ext DAY), " &
                                           "total_price = @newPrice, " &
                                           "extended_days = extended_days + @ext " &
@@ -243,13 +282,12 @@ Public Class ReturnCar
         SelectedRentalID = 0
         LateFeetxtbx.Text = "Late Fee: ₱0.00"
         Totaltxtbx.Text = "Final Total: ₱0.00"
-
         ConfirmBtn.Enabled = False
         UpdateBtn.Enabled = False
-
         ReturnCarGrid.ClearSelection()
         ExtensionCmbBx.SelectedIndex = 0
-        SearchbarTxtBx.Clear() ' Clear search on reset
+        SearchbarTxtBx.Clear()
+        ExtensionCmbBx.Enabled = True
     End Sub
 
     Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click

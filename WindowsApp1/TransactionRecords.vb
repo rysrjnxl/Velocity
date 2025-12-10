@@ -16,6 +16,9 @@ Public Class TransactionRecords
         TransactionGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         TransactionGrid.ReadOnly = True
         TransactionGrid.AllowUserToAddRows = False
+        TransactionGrid.RowHeadersVisible = False
+        TransactionGrid.AllowUserToResizeColumns = False
+        TransactionGrid.AllowUserToResizeRows = False
 
         ' 4. Load Data
         LoadTransactions("")
@@ -36,7 +39,7 @@ Public Class TransactionRecords
 
                 ' If searching, append AND condition
                 If Not String.IsNullOrEmpty(searchTerm) Then
-                    query &= " AND (c.name LIKE @search OR r.car_model LIKE @search)"
+                    query &= " AND (c.name LIKE @search OR r.car_model LIKE @search OR r.status LIKE @search)"
                 End If
 
                 ' Order by newest first
