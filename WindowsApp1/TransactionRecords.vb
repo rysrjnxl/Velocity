@@ -25,30 +25,30 @@ Public Class TransactionRecords
         Using conn As New MySqlConnection(ConnectDatabase)
             Try
                 conn.Open()
-                ' Join tables to get clean names instead of IDs
+
+                ' --- UPDATED QUERY: FILTER FOR 'Returned' OR 'Cancelled' ONLY ---
                 Dim query As String = "SELECT r.rental_id, c.name AS Customer, r.car_model AS Car, " &
                                       "r.rent_date AS 'Rent Date', r.return_date AS 'Return Date', " &
                                       "r.total_price AS 'Total Price', r.status AS Status " &
                                       "FROM rentals r " &
                                       "JOIN customers c ON r.customer_id = c.customer_id " &
-                                      "ORDER BY r.rental_id DESC"
+                                      "WHERE r.status IN ('Returned', 'Cancelled')"
 
-                ' Filter if searching
+                ' If searching, append AND condition
                 If Not String.IsNullOrEmpty(searchTerm) Then
-                    query = "SELECT r.rental_id, c.name AS Customer, r.car_model AS Car, " &
-                            "r.rent_date AS 'Rent Date', r.return_date AS 'Return Date', " &
-                            "r.total_price AS 'Total Price', r.status AS Status " &
-                            "FROM rentals r " &
-                            "JOIN customers c ON r.customer_id = c.customer_id " &
-                            "WHERE c.name LIKE @search OR r.car_model LIKE @search " &
-                            "ORDER BY r.rental_id DESC"
+                    query &= " AND (c.name LIKE @search OR r.car_model LIKE @search)"
                 End If
 
-                Dim da As New MySqlDataAdapter(query, conn)
+                ' Order by newest first
+                query &= " ORDER BY r.rental_id DESC"
+
+                Dim cmd As New MySqlCommand(query, conn)
+
                 If Not String.IsNullOrEmpty(searchTerm) Then
-                    da.SelectCommand.Parameters.AddWithValue("@search", "%" & searchTerm & "%")
+                    cmd.Parameters.AddWithValue("@search", "%" & searchTerm & "%")
                 End If
 
+                Dim da As New MySqlDataAdapter(cmd)
                 Dim dt As New DataTable()
                 da.Fill(dt)
 
@@ -64,17 +64,11 @@ Public Class TransactionRecords
                     TransactionGrid.Columns("Total Price").DefaultCellStyle.Format = "N2"
                 End If
 
-                ' Color Coding (Optional Visuals)
                 For Each row As DataGridViewRow In TransactionGrid.Rows
                     Dim status As String = row.Cells("Status").Value.ToString()
-                    If status = "Active" Then
-                        row.DefaultCellStyle.ForeColor = Color.Green
-                    ElseIf status = "Cancelled" Then
-                        row.DefaultCellStyle.ForeColor = Color.OrangeRed
-                    ElseIf status = "Overdue" Then
+
+                    If status = "Cancelled" Then
                         row.DefaultCellStyle.ForeColor = Color.Red
-                    ElseIf status = "Returned" Then
-                        row.DefaultCellStyle.ForeColor = Color.Blue
                     End If
                 Next
 
@@ -102,8 +96,7 @@ Public Class TransactionRecords
 
     ' --- RESIZE HANDLER ---
     Private Sub OnSidebarResized(sidebarWidth As Integer)
-        ' Adjust width if using panels, otherwise Dock=Fill handles it
-        ' Panel1.Width = Me.ClientSize.Width - sidebarWidth
+        ' Logic to resize if necessary
     End Sub
 
 End Class
