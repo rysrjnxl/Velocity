@@ -79,7 +79,7 @@ Public Class RentTransaction
                 End If
 
             Catch ex As Exception
-                MessageBox.Show("Error loading cars: " & ex.Message)
+                MessageBox.Show("Error loading cars: " & ex.Message, "Error")
             End Try
         End Using
     End Sub
@@ -216,11 +216,11 @@ Public Class RentTransaction
                 End If
             End Using
 
-            MessageBox.Show("Rental Confirmed!")
+            MessageBox.Show("Rental Confirmed!", "Notification")
             Me.Close()
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error: " & ex.Message, "Error")
         End Try
     End Sub
 
@@ -241,7 +241,7 @@ Public Class RentTransaction
                 CustomerCmbx.ValueMember = "customer_id"
                 CustomerCmbx.DataSource = dt
             Catch ex As Exception
-                MessageBox.Show("Connection Error: " & ex.Message)
+                MessageBox.Show("Connection Error: " & ex.Message, "Error")
             End Try
         End Using
     End Sub

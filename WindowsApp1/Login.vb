@@ -32,7 +32,7 @@ Public Class Login
             End Using
 
         Catch ex As Exception
-            MessageBox.Show("Database Error: " & ex.Message)
+            MessageBox.Show("Database Error: " & ex.Message, "Error")
         End Try
     End Sub
 

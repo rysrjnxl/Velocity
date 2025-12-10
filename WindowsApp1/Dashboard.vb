@@ -62,7 +62,7 @@ Public Class Dashboard
                 End If
 
             Catch ex As Exception
-                MessageBox.Show("Error loading dashboard stats: " & ex.Message)
+                MessageBox.Show("Error loading dashboard stats: " & ex.Message, "Error")
             End Try
         End Using
     End Sub

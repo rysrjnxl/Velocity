@@ -79,7 +79,7 @@ Public Class RentCar
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show("Error checking availability: " & ex.Message)
+            MessageBox.Show("Error checking availability: " & ex.Message, "Error")
         End Try
     End Sub
     Private Sub BufferPictureControls()

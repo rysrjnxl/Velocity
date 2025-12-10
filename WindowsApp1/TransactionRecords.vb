@@ -52,7 +52,7 @@ Public Class TransactionRecords
                     TransactionGrid.Columns("Total Price").DefaultCellStyle.Format = "N2"
                 End If
             Catch ex As Exception
-                MessageBox.Show("Error loading transactions: " & ex.Message)
+                MessageBox.Show("Error loading transactions: " & ex.Message, "Error")
             End Try
         End Using
     End Sub

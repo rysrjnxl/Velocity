@@ -65,7 +65,7 @@ Public Class CustomerRecords
                 End If
 
             Catch ex As Exception
-                MessageBox.Show("Error loading data: " & ex.Message)
+                MessageBox.Show("Error loading data: " & ex.Message, "Error")
             End Try
         End Using
     End Sub
@@ -88,7 +88,7 @@ Public Class CustomerRecords
 
     Private Sub AddCustomerBtn_Click(sender As Object, e As EventArgs) Handles AddCustomerBtn.Click
         If NameTxtBx.Text = "" Then
-            MessageBox.Show("Please enter a Name.")
+            MessageBox.Show("Please enter a Name.", "Notification")
             Exit Sub
         End If
 
@@ -106,18 +106,18 @@ Public Class CustomerRecords
                 End Using
             End Using
 
-            MessageBox.Show("Customer Added Successfully!")
+            MessageBox.Show("Customer Added Successfully!", "Notification")
             LoadCustomers("")
             ClearTxtBx()
 
         Catch ex As Exception
-            MessageBox.Show("Error Adding: " & ex.Message)
+            MessageBox.Show("Error Adding: " & ex.Message, "Error")
         End Try
     End Sub
 
     Private Sub UpdateBtn_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
         If SelectedCustomerId = 0 Then
-            MessageBox.Show("Please select a customer from the list first.")
+            MessageBox.Show("Please select a customer from the list first.", "Notification")
             Exit Sub
         End If
 
@@ -136,12 +136,12 @@ Public Class CustomerRecords
                 End Using
             End Using
 
-            MessageBox.Show("Customer Updated Successfully!")
+            MessageBox.Show("Customer Updated Successfully!", "Update Successful")
             LoadCustomers("")
             ClearTxtBx()
 
         Catch ex As Exception
-            MessageBox.Show("Error Updating: " & ex.Message)
+            MessageBox.Show("Error Updating: " & ex.Message, "Notification")
         End Try
     End Sub
 

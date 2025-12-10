@@ -203,13 +203,13 @@ Public Class ReturnCar
             ResetForm()
             LoadActiveRentals()
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error: " & ex.Message, "Error")
         End Try
     End Sub
 
     Private Sub ConfirmBtn_Click(sender As Object, e As EventArgs) Handles ConfirmBtn.Click
         If SelectedRentalID = 0 Then
-            MessageBox.Show("Select a transaction first.")
+            MessageBox.Show("Select a transaction first.", "Invalid Action")
             Exit Sub
         End If
 
@@ -231,11 +231,11 @@ Public Class ReturnCar
                 End Using
             End Using
 
-            MessageBox.Show("Car Returned Successfully!" & vbCrLf & "Total Fee: ₱" & FinalTotalAmount.ToString("N2"))
+            MessageBox.Show("Car Returned Successfully!" & vbCrLf & "Total Fee: ₱" & FinalTotalAmount.ToString("N2"), "Notification")
             ResetForm()
             LoadActiveRentals()
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error: " & ex.Message, "Error")
         End Try
     End Sub
 
@@ -256,7 +256,7 @@ Public Class ReturnCar
 
     Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
         If SelectedRentalID = 0 Then
-            MessageBox.Show("Please select a rental first.")
+            MessageBox.Show("Please select a rental first.", "Select from records")
             Exit Sub
         End If
 

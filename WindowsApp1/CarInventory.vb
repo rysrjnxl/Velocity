@@ -114,7 +114,7 @@ Public Class CarInventory
                 UpdateInventoryStatus()
 
             Catch ex As Exception
-                MessageBox.Show("Error updating status: " & ex.Message)
+                MessageBox.Show("Error updating status: " & ex.Message, "Error")
             End Try
         End Using
     End Sub
@@ -164,7 +164,7 @@ Public Class CarInventory
                     End Using
                 End Using
             Catch ex As Exception
-                MessageBox.Show("Error loading inventory: " & ex.Message)
+                MessageBox.Show("Error loading inventory: " & ex.Message, "Error")
             End Try
         End Using
     End Sub
