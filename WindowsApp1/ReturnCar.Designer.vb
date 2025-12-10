@@ -32,6 +32,7 @@ Partial Class ReturnCar
         Me.ExtensionCmbBx = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.UpdateBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.ReturnCarGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,13 +114,13 @@ Partial Class ReturnCar
         Me.ConfirmBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ConfirmBtn.ForeColor = System.Drawing.Color.White
         Me.ConfirmBtn.HoverState.Parent = Me.ConfirmBtn
-        Me.ConfirmBtn.Location = New System.Drawing.Point(798, 742)
+        Me.ConfirmBtn.Location = New System.Drawing.Point(554, 768)
         Me.ConfirmBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ConfirmBtn.Name = "ConfirmBtn"
         Me.ConfirmBtn.ShadowDecoration.Parent = Me.ConfirmBtn
         Me.ConfirmBtn.Size = New System.Drawing.Size(202, 56)
         Me.ConfirmBtn.TabIndex = 5
-        Me.ConfirmBtn.Text = "Confirm"
+        Me.ConfirmBtn.Text = "Return"
         '
         'CancelBtn
         '
@@ -130,13 +131,13 @@ Partial Class ReturnCar
         Me.CancelBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CancelBtn.ForeColor = System.Drawing.Color.White
         Me.CancelBtn.HoverState.Parent = Me.CancelBtn
-        Me.CancelBtn.Location = New System.Drawing.Point(1043, 742)
+        Me.CancelBtn.Location = New System.Drawing.Point(799, 768)
         Me.CancelBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CancelBtn.Name = "CancelBtn"
         Me.CancelBtn.ShadowDecoration.Parent = Me.CancelBtn
         Me.CancelBtn.Size = New System.Drawing.Size(202, 56)
         Me.CancelBtn.TabIndex = 6
-        Me.CancelBtn.Text = "Cancel"
+        Me.CancelBtn.Text = "Clear"
         '
         'Label21
         '
@@ -188,7 +189,7 @@ Partial Class ReturnCar
         Me.UpdateBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UpdateBtn.ForeColor = System.Drawing.Color.White
         Me.UpdateBtn.HoverState.Parent = Me.UpdateBtn
-        Me.UpdateBtn.Location = New System.Drawing.Point(551, 742)
+        Me.UpdateBtn.Location = New System.Drawing.Point(307, 768)
         Me.UpdateBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.UpdateBtn.Name = "UpdateBtn"
         Me.UpdateBtn.ShadowDecoration.Parent = Me.UpdateBtn
@@ -196,11 +197,29 @@ Partial Class ReturnCar
         Me.UpdateBtn.TabIndex = 11
         Me.UpdateBtn.Text = "Update"
         '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.BorderRadius = 5
+        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
+        Me.Guna2Button1.FillColor = System.Drawing.SystemColors.GrayText
+        Me.Guna2Button1.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Location = New System.Drawing.Point(1043, 768)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Size = New System.Drawing.Size(202, 56)
+        Me.Guna2Button1.TabIndex = 12
+        Me.Guna2Button1.Text = "Cancel"
+        '
         'ReturnCar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1440, 900)
+        Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.UpdateBtn)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Controls.Add(Me.ExtensionCmbBx)
@@ -231,4 +250,5 @@ Partial Class ReturnCar
     Friend WithEvents ExtensionCmbBx As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents UpdateBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class

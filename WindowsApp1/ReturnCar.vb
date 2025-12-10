@@ -235,7 +235,14 @@ Public Class ReturnCar
     End Sub
 
     Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
-        Me.Close()
+        SelectedRentalID = 0
+        LateFeetxtbx.Text = "Late Fee: ₱0.00"
+        Totaltxtbx.Text = "Final Total: ₱0.00"
+        ConfirmBtn.Enabled = False
+        UpdateBtn.Enabled = False
+        ReturnCarGrid.ClearSelection()
+        ExtensionCmbBx.Enabled = True
+        ExtensionCmbBx.SelectedIndex = 0
     End Sub
 
     Private Sub ReturnCar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
