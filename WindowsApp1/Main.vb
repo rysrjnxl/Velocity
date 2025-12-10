@@ -16,8 +16,9 @@
         ReturnCarBtn_Click(Nothing, Nothing)
         settingsBtn_Click(Nothing, Nothing)
         aboutBtn_Click(Nothing, Nothing)
+        TransactionBtn_Click(Nothing, Nothing)
         dashboardBtn_Click(Nothing, Nothing)
-        TransactionsBtn_Click(Nothing, Nothing)
+
     End Sub
 
     'Dim menuExpand As Boolean = False
@@ -163,7 +164,7 @@
         FormReturnCar = Nothing
     End Sub
 
-    Private Sub TransactionsBtn_Click(sender As Object, e As EventArgs) Handles TransactionsBtn.Click
+    Private Sub TransactionBtn_Click(sender As Object, e As EventArgs) Handles TransactionsBtn.Click
         If FormTransaction Is Nothing Then
             FormTransaction = New TransactionRecords()
             AddHandler FormTransaction.FormClosed, AddressOf FormTransaction_FormClosed
@@ -173,12 +174,11 @@
         Else
             FormTransaction.Activate()
         End If
-
     End Sub
-
-    Private Sub FormTransaction_FormClosed(sender As Object, e As EventArgs) Handles TransactionsBtn.Click
+    Private Sub FormTransaction_FormClosed(sender As Object, e As FormClosedEventArgs)
         FormTransaction = Nothing
     End Sub
+
     Private Sub settingsBtn_Click(sender As Object, e As EventArgs) Handles settingsBtn.Click
         If FormSettings Is Nothing Then
             FormSettings = New Settings()
@@ -189,9 +189,7 @@
         Else
             FormSettings.Activate()
         End If
-
     End Sub
-
     Private Sub FormSettings_FormClosed(sender As Object, e As FormClosedEventArgs)
         FormSettings = Nothing
     End Sub

@@ -25,9 +25,10 @@ Partial Class TransactionRecords
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TransactionRecords))
         Me.SearchbarTxtBx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.ReturnCarGrid = New System.Windows.Forms.DataGridView()
+        Me.TransactionGrid = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.ReturnCarGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RefreshBtn = New Guna.UI2.WinForms.Guna2Button()
+        CType(Me.TransactionGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SearchbarTxtBx
@@ -65,16 +66,16 @@ Partial Class TransactionRecords
         Me.Label21.TabIndex = 16
         Me.Label21.Text = "Transaction Records"
         '
-        'ReturnCarGrid
+        'TransactionGrid
         '
-        Me.ReturnCarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ReturnCarGrid.Location = New System.Drawing.Point(171, 182)
-        Me.ReturnCarGrid.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.ReturnCarGrid.Name = "ReturnCarGrid"
-        Me.ReturnCarGrid.RowHeadersWidth = 51
-        Me.ReturnCarGrid.RowTemplate.Height = 24
-        Me.ReturnCarGrid.Size = New System.Drawing.Size(1080, 429)
-        Me.ReturnCarGrid.TabIndex = 15
+        Me.TransactionGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TransactionGrid.Location = New System.Drawing.Point(171, 182)
+        Me.TransactionGrid.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TransactionGrid.Name = "TransactionGrid"
+        Me.TransactionGrid.RowHeadersWidth = 51
+        Me.TransactionGrid.RowTemplate.Height = 24
+        Me.TransactionGrid.Size = New System.Drawing.Size(1080, 429)
+        Me.TransactionGrid.TabIndex = 15
         '
         'Label1
         '
@@ -84,20 +85,35 @@ Partial Class TransactionRecords
         Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 14
         '
+        'RefreshBtn
+        '
+        Me.RefreshBtn.CheckedState.Parent = Me.RefreshBtn
+        Me.RefreshBtn.CustomImages.Parent = Me.RefreshBtn
+        Me.RefreshBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RefreshBtn.ForeColor = System.Drawing.Color.White
+        Me.RefreshBtn.HoverState.Parent = Me.RefreshBtn
+        Me.RefreshBtn.Location = New System.Drawing.Point(1071, 123)
+        Me.RefreshBtn.Name = "RefreshBtn"
+        Me.RefreshBtn.ShadowDecoration.Parent = Me.RefreshBtn
+        Me.RefreshBtn.Size = New System.Drawing.Size(180, 45)
+        Me.RefreshBtn.TabIndex = 18
+        Me.RefreshBtn.Text = "Refresh"
+        '
         'TransactionRecords
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1440, 900)
+        Me.Controls.Add(Me.RefreshBtn)
         Me.Controls.Add(Me.SearchbarTxtBx)
         Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.ReturnCarGrid)
+        Me.Controls.Add(Me.TransactionGrid)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TransactionRecords"
         Me.Text = "TransactionRecords"
-        CType(Me.ReturnCarGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TransactionGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -105,6 +121,7 @@ Partial Class TransactionRecords
 
     Friend WithEvents SearchbarTxtBx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label21 As Label
-    Friend WithEvents ReturnCarGrid As DataGridView
+    Friend WithEvents TransactionGrid As DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents RefreshBtn As Guna.UI2.WinForms.Guna2Button
 End Class
