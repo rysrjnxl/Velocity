@@ -661,6 +661,7 @@ Partial Class RentCar
         Me.Controls.Add(Me.CarFlowPanel)
         Me.Controls.Add(Me.Panel11)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "RentCar"
         Me.Text = "RentCar"

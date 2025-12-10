@@ -202,6 +202,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Theme.vb" />
+    <Compile Include="TransactionRecords.Designer.vb">
+      <DependentUpon>TransactionRecords.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionRecords.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="About.resx">
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionRecords.resx">
+      <DependentUpon>TransactionRecords.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

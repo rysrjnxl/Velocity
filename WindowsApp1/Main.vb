@@ -7,6 +7,7 @@
     Dim FormReturnCar As ReturnCar
     Dim FormSettings As Settings
     Dim FormAbout As About
+    Dim FormTransaction As TransactionRecords
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         carinvBtn_Click(Nothing, Nothing)
@@ -16,6 +17,7 @@
         settingsBtn_Click(Nothing, Nothing)
         aboutBtn_Click(Nothing, Nothing)
         dashboardBtn_Click(Nothing, Nothing)
+        TransactionsBtn_Click(Nothing, Nothing)
     End Sub
 
     'Dim menuExpand As Boolean = False
@@ -161,10 +163,26 @@
         FormReturnCar = Nothing
     End Sub
 
+    Private Sub TransactionsBtn_Click(sender As Object, e As EventArgs) Handles TransactionsBtn.Click
+        If FormTransaction Is Nothing Then
+            FormTransaction = New TransactionRecords()
+            AddHandler FormTransaction.FormClosed, AddressOf FormTransaction_FormClosed
+            FormTransaction.MdiParent = Me
+            FormTransaction.Dock = DockStyle.Fill
+            FormTransaction.Show()
+        Else
+            FormTransaction.Activate()
+        End If
+
+    End Sub
+
+    Private Sub FormTransaction_FormClosed(sender As Object, e As EventArgs) Handles TransactionsBtn.Click
+        FormTransaction = Nothing
+    End Sub
     Private Sub settingsBtn_Click(sender As Object, e As EventArgs) Handles settingsBtn.Click
         If FormSettings Is Nothing Then
             FormSettings = New Settings()
-            AddHandler FormSettings.FormClosed, AddressOf FormReturnCar_FormClosed
+            AddHandler FormSettings.FormClosed, AddressOf FormSettings_FormClosed
             FormSettings.MdiParent = Me
             FormSettings.Dock = DockStyle.Fill
             FormSettings.Show()
@@ -173,6 +191,7 @@
         End If
 
     End Sub
+
     Private Sub FormSettings_FormClosed(sender As Object, e As FormClosedEventArgs)
         FormSettings = Nothing
     End Sub

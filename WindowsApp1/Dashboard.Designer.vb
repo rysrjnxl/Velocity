@@ -103,7 +103,7 @@ Partial Class Dashboard
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(3, 40)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(0, 0)
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(3, 2)
         Me.Guna2HtmlLabel5.TabIndex = 1
         Me.Guna2HtmlLabel5.Text = Nothing
         '
@@ -112,7 +112,7 @@ Partial Class Dashboard
         Me.TotalCarsLbl.AutoSize = True
         Me.TotalCarsLbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TotalCarsLbl.Font = New System.Drawing.Font("ROG Fonts", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TotalCarsLbl.Location = New System.Drawing.Point(3, 43)
+        Me.TotalCarsLbl.Location = New System.Drawing.Point(3, 45)
         Me.TotalCarsLbl.Name = "TotalCarsLbl"
         Me.TotalCarsLbl.Size = New System.Drawing.Size(198, 58)
         Me.TotalCarsLbl.TabIndex = 2
@@ -243,6 +243,7 @@ Partial Class Dashboard
         Me.Controls.Add(Me.ScorecardPanel)
         Me.Controls.Add(Me.DashboardPic_Panel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Dashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

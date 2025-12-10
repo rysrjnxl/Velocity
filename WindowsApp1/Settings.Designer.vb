@@ -22,13 +22,14 @@ Partial Class Settings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.LightModeBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.DarkModeBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -78,36 +79,6 @@ Partial Class Settings
         Me.Panel1.Size = New System.Drawing.Size(1440, 900)
         Me.Panel1.TabIndex = 5
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("ROG Fonts", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(48, 125)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(196, 48)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Theme"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("ROG Fonts", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(143, 214)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(279, 38)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Dark Theme"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("ROG Fonts", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(143, 392)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(288, 38)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Light Theme"
-        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -119,6 +90,36 @@ Partial Class Settings
         Me.Label21.TabIndex = 8
         Me.Label21.Text = "Settings"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("ROG Fonts", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(143, 392)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(288, 38)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Light Theme"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("ROG Fonts", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(143, 214)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(279, 38)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Dark Theme"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("ROG Fonts", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(48, 125)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(196, 48)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Theme"
+        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -126,6 +127,7 @@ Partial Class Settings
         Me.ClientSize = New System.Drawing.Size(1440, 900)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Settings"
         Me.Text = "Settings"

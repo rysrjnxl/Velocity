@@ -22,24 +22,26 @@ Partial Class ReturnCar
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReturnCar))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ReturnCarGrid = New System.Windows.Forms.DataGridView()
         Me.LateFeetxtbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Totaltxtbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ConfirmBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.CancelBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.ClearBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.ExtensionCmbBx = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.UpdateBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.CancelBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.SearchbarTxtBx = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.ReturnCarGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(481, 300)
+        Me.Label1.Location = New System.Drawing.Point(481, 360)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 0
@@ -47,7 +49,7 @@ Partial Class ReturnCar
         'ReturnCarGrid
         '
         Me.ReturnCarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ReturnCarGrid.Location = New System.Drawing.Point(165, 83)
+        Me.ReturnCarGrid.Location = New System.Drawing.Point(165, 143)
         Me.ReturnCarGrid.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ReturnCarGrid.Name = "ReturnCarGrid"
         Me.ReturnCarGrid.RowHeadersWidth = 51
@@ -69,7 +71,7 @@ Partial Class ReturnCar
         Me.LateFeetxtbx.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LateFeetxtbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LateFeetxtbx.HoverState.Parent = Me.LateFeetxtbx
-        Me.LateFeetxtbx.Location = New System.Drawing.Point(165, 554)
+        Me.LateFeetxtbx.Location = New System.Drawing.Point(980, 601)
         Me.LateFeetxtbx.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.LateFeetxtbx.Name = "LateFeetxtbx"
         Me.LateFeetxtbx.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -77,7 +79,7 @@ Partial Class ReturnCar
         Me.LateFeetxtbx.ReadOnly = True
         Me.LateFeetxtbx.SelectedText = ""
         Me.LateFeetxtbx.ShadowDecoration.Parent = Me.LateFeetxtbx
-        Me.LateFeetxtbx.Size = New System.Drawing.Size(300, 55)
+        Me.LateFeetxtbx.Size = New System.Drawing.Size(265, 44)
         Me.LateFeetxtbx.TabIndex = 3
         '
         'Totaltxtbx
@@ -94,7 +96,7 @@ Partial Class ReturnCar
         Me.Totaltxtbx.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Totaltxtbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Totaltxtbx.HoverState.Parent = Me.Totaltxtbx
-        Me.Totaltxtbx.Location = New System.Drawing.Point(473, 554)
+        Me.Totaltxtbx.Location = New System.Drawing.Point(707, 601)
         Me.Totaltxtbx.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Totaltxtbx.Name = "Totaltxtbx"
         Me.Totaltxtbx.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -102,7 +104,7 @@ Partial Class ReturnCar
         Me.Totaltxtbx.ReadOnly = True
         Me.Totaltxtbx.SelectedText = ""
         Me.Totaltxtbx.ShadowDecoration.Parent = Me.Totaltxtbx
-        Me.Totaltxtbx.Size = New System.Drawing.Size(300, 55)
+        Me.Totaltxtbx.Size = New System.Drawing.Size(265, 44)
         Me.Totaltxtbx.TabIndex = 4
         '
         'ConfirmBtn
@@ -114,7 +116,7 @@ Partial Class ReturnCar
         Me.ConfirmBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ConfirmBtn.ForeColor = System.Drawing.Color.White
         Me.ConfirmBtn.HoverState.Parent = Me.ConfirmBtn
-        Me.ConfirmBtn.Location = New System.Drawing.Point(554, 768)
+        Me.ConfirmBtn.Location = New System.Drawing.Point(554, 719)
         Me.ConfirmBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ConfirmBtn.Name = "ConfirmBtn"
         Me.ConfirmBtn.ShadowDecoration.Parent = Me.ConfirmBtn
@@ -122,22 +124,22 @@ Partial Class ReturnCar
         Me.ConfirmBtn.TabIndex = 5
         Me.ConfirmBtn.Text = "Return"
         '
-        'CancelBtn
+        'ClearBtn
         '
-        Me.CancelBtn.BorderRadius = 5
-        Me.CancelBtn.CheckedState.Parent = Me.CancelBtn
-        Me.CancelBtn.CustomImages.Parent = Me.CancelBtn
-        Me.CancelBtn.FillColor = System.Drawing.SystemColors.GrayText
-        Me.CancelBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CancelBtn.ForeColor = System.Drawing.Color.White
-        Me.CancelBtn.HoverState.Parent = Me.CancelBtn
-        Me.CancelBtn.Location = New System.Drawing.Point(799, 768)
-        Me.CancelBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.CancelBtn.Name = "CancelBtn"
-        Me.CancelBtn.ShadowDecoration.Parent = Me.CancelBtn
-        Me.CancelBtn.Size = New System.Drawing.Size(202, 56)
-        Me.CancelBtn.TabIndex = 6
-        Me.CancelBtn.Text = "Clear"
+        Me.ClearBtn.BorderRadius = 5
+        Me.ClearBtn.CheckedState.Parent = Me.ClearBtn
+        Me.ClearBtn.CustomImages.Parent = Me.ClearBtn
+        Me.ClearBtn.FillColor = System.Drawing.SystemColors.GrayText
+        Me.ClearBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClearBtn.ForeColor = System.Drawing.Color.White
+        Me.ClearBtn.HoverState.Parent = Me.ClearBtn
+        Me.ClearBtn.Location = New System.Drawing.Point(799, 719)
+        Me.ClearBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ClearBtn.Name = "ClearBtn"
+        Me.ClearBtn.ShadowDecoration.Parent = Me.ClearBtn
+        Me.ClearBtn.Size = New System.Drawing.Size(202, 56)
+        Me.ClearBtn.TabIndex = 6
+        Me.ClearBtn.Text = "Clear"
         '
         'Label21
         '
@@ -164,7 +166,7 @@ Partial Class ReturnCar
         Me.ExtensionCmbBx.ItemHeight = 30
         Me.ExtensionCmbBx.Items.AddRange(New Object() {"0", "1", "2", "3"})
         Me.ExtensionCmbBx.ItemsAppearance.Parent = Me.ExtensionCmbBx
-        Me.ExtensionCmbBx.Location = New System.Drawing.Point(425, 646)
+        Me.ExtensionCmbBx.Location = New System.Drawing.Point(425, 601)
         Me.ExtensionCmbBx.Name = "ExtensionCmbBx"
         Me.ExtensionCmbBx.ShadowDecoration.Parent = Me.ExtensionCmbBx
         Me.ExtensionCmbBx.Size = New System.Drawing.Size(244, 36)
@@ -174,7 +176,7 @@ Partial Class ReturnCar
         '
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("ROG Fonts", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(165, 646)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(165, 601)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(244, 31)
         Me.Guna2HtmlLabel1.TabIndex = 10
@@ -189,7 +191,7 @@ Partial Class ReturnCar
         Me.UpdateBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UpdateBtn.ForeColor = System.Drawing.Color.White
         Me.UpdateBtn.HoverState.Parent = Me.UpdateBtn
-        Me.UpdateBtn.Location = New System.Drawing.Point(307, 768)
+        Me.UpdateBtn.Location = New System.Drawing.Point(307, 719)
         Me.UpdateBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.UpdateBtn.Name = "UpdateBtn"
         Me.UpdateBtn.ShadowDecoration.Parent = Me.UpdateBtn
@@ -197,40 +199,66 @@ Partial Class ReturnCar
         Me.UpdateBtn.TabIndex = 11
         Me.UpdateBtn.Text = "Update"
         '
-        'Guna2Button1
+        'CancelBtn
         '
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
-        Me.Guna2Button1.FillColor = System.Drawing.SystemColors.GrayText
-        Me.Guna2Button1.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Location = New System.Drawing.Point(1043, 768)
-        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Size = New System.Drawing.Size(202, 56)
-        Me.Guna2Button1.TabIndex = 12
-        Me.Guna2Button1.Text = "Cancel"
+        Me.CancelBtn.BorderRadius = 5
+        Me.CancelBtn.CheckedState.Parent = Me.CancelBtn
+        Me.CancelBtn.CustomImages.Parent = Me.CancelBtn
+        Me.CancelBtn.FillColor = System.Drawing.SystemColors.GrayText
+        Me.CancelBtn.Font = New System.Drawing.Font("ROG Fonts", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CancelBtn.ForeColor = System.Drawing.Color.White
+        Me.CancelBtn.HoverState.Parent = Me.CancelBtn
+        Me.CancelBtn.Location = New System.Drawing.Point(1043, 719)
+        Me.CancelBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.CancelBtn.Name = "CancelBtn"
+        Me.CancelBtn.ShadowDecoration.Parent = Me.CancelBtn
+        Me.CancelBtn.Size = New System.Drawing.Size(202, 56)
+        Me.CancelBtn.TabIndex = 12
+        Me.CancelBtn.Text = "Cancel"
+        '
+        'SearchbarTxtBx
+        '
+        Me.SearchbarTxtBx.BorderRadius = 10
+        Me.SearchbarTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.SearchbarTxtBx.DefaultText = ""
+        Me.SearchbarTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.SearchbarTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.SearchbarTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.SearchbarTxtBx.DisabledState.Parent = Me.SearchbarTxtBx
+        Me.SearchbarTxtBx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.SearchbarTxtBx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SearchbarTxtBx.FocusedState.Parent = Me.SearchbarTxtBx
+        Me.SearchbarTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SearchbarTxtBx.HoverState.Parent = Me.SearchbarTxtBx
+        Me.SearchbarTxtBx.Location = New System.Drawing.Point(165, 84)
+        Me.SearchbarTxtBx.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.SearchbarTxtBx.Name = "SearchbarTxtBx"
+        Me.SearchbarTxtBx.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.SearchbarTxtBx.PlaceholderText = ""
+        Me.SearchbarTxtBx.SelectedText = ""
+        Me.SearchbarTxtBx.ShadowDecoration.Parent = Me.SearchbarTxtBx
+        Me.SearchbarTxtBx.Size = New System.Drawing.Size(344, 39)
+        Me.SearchbarTxtBx.TabIndex = 13
         '
         'ReturnCar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1440, 900)
-        Me.Controls.Add(Me.Guna2Button1)
+        Me.ClientSize = New System.Drawing.Size(1361, 838)
+        Me.Controls.Add(Me.SearchbarTxtBx)
+        Me.Controls.Add(Me.CancelBtn)
         Me.Controls.Add(Me.UpdateBtn)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Controls.Add(Me.ExtensionCmbBx)
         Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.CancelBtn)
+        Me.Controls.Add(Me.ClearBtn)
         Me.Controls.Add(Me.ConfirmBtn)
         Me.Controls.Add(Me.Totaltxtbx)
         Me.Controls.Add(Me.LateFeetxtbx)
         Me.Controls.Add(Me.ReturnCarGrid)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "ReturnCar"
         Me.Text = "ReturnCar"
@@ -245,10 +273,11 @@ Partial Class ReturnCar
     Friend WithEvents LateFeetxtbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Totaltxtbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents ConfirmBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ClearBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label21 As Label
     Friend WithEvents ExtensionCmbBx As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents UpdateBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents SearchbarTxtBx As Guna.UI2.WinForms.Guna2TextBox
 End Class

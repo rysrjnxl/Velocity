@@ -27,32 +27,35 @@ Partial Class Main
         Me.closeBox = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.menuTransition = New System.Windows.Forms.Timer(Me.components)
         Me.sidebarTransition = New System.Windows.Forms.Timer(Me.components)
         Me.pnLogout = New System.Windows.Forms.Panel()
-        Me.logoutBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.pnAbout = New System.Windows.Forms.Panel()
-        Me.aboutBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.pnSettings = New System.Windows.Forms.Panel()
-        Me.settingsBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.ReturnCarBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.RentCarBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.recordsBtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.carinvBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.pnDashboard = New System.Windows.Forms.Panel()
-        Me.dashboardBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.pnSidebar = New System.Windows.Forms.Panel()
-        Me.sidebarBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.sidebarPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.sidebarBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.dashboardBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.carinvBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.recordsBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.RentCarBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.ReturnCarBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.TransactionsBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.aboutBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.settingsBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.logoutBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1.SuspendLayout()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnLogout.SuspendLayout()
         Me.pnAbout.SuspendLayout()
         Me.pnSettings.SuspendLayout()
         Me.pnDashboard.SuspendLayout()
         Me.pnSidebar.SuspendLayout()
         Me.sidebarPanel.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'closeBox
@@ -98,17 +101,6 @@ Partial Class Main
         Me.Guna2Panel1.Size = New System.Drawing.Size(1440, 62)
         Me.Guna2Panel1.TabIndex = 0
         '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(12, 12)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.ShadowDecoration.Parent = Me.Guna2PictureBox2
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(39, 33)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox2.TabIndex = 3
-        Me.Guna2PictureBox2.TabStop = False
-        '
         'menuTransition
         '
         Me.menuTransition.Interval = 10
@@ -121,31 +113,11 @@ Partial Class Main
         '
         Me.pnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnLogout.Controls.Add(Me.logoutBtn)
-        Me.pnLogout.Location = New System.Drawing.Point(9, 652)
+        Me.pnLogout.Location = New System.Drawing.Point(9, 735)
         Me.pnLogout.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.pnLogout.Name = "pnLogout"
-        Me.pnLogout.Size = New System.Drawing.Size(281, 75)
+        Me.pnLogout.Size = New System.Drawing.Size(336, 75)
         Me.pnLogout.TabIndex = 3
-        '
-        'logoutBtn
-        '
-        Me.logoutBtn.CheckedState.Parent = Me.logoutBtn
-        Me.logoutBtn.CustomImages.Parent = Me.logoutBtn
-        Me.logoutBtn.Dock = System.Windows.Forms.DockStyle.Left
-        Me.logoutBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.logoutBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(210, Byte), Integer))
-        Me.logoutBtn.HoverState.Parent = Me.logoutBtn
-        Me.logoutBtn.Image = CType(resources.GetObject("logoutBtn.Image"), System.Drawing.Image)
-        Me.logoutBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.logoutBtn.Location = New System.Drawing.Point(0, 0)
-        Me.logoutBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.logoutBtn.Name = "logoutBtn"
-        Me.logoutBtn.ShadowDecoration.Parent = Me.logoutBtn
-        Me.logoutBtn.Size = New System.Drawing.Size(336, 75)
-        Me.logoutBtn.TabIndex = 0
-        Me.logoutBtn.Text = "        Logout"
-        Me.logoutBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'pnAbout
         '
@@ -154,134 +126,18 @@ Partial Class Main
         Me.pnAbout.Location = New System.Drawing.Point(9, 569)
         Me.pnAbout.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.pnAbout.Name = "pnAbout"
-        Me.pnAbout.Size = New System.Drawing.Size(281, 75)
+        Me.pnAbout.Size = New System.Drawing.Size(336, 75)
         Me.pnAbout.TabIndex = 3
-        '
-        'aboutBtn
-        '
-        Me.aboutBtn.CheckedState.Parent = Me.aboutBtn
-        Me.aboutBtn.CustomImages.Parent = Me.aboutBtn
-        Me.aboutBtn.Dock = System.Windows.Forms.DockStyle.Left
-        Me.aboutBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.aboutBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.aboutBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.aboutBtn.HoverState.Parent = Me.aboutBtn
-        Me.aboutBtn.Image = CType(resources.GetObject("aboutBtn.Image"), System.Drawing.Image)
-        Me.aboutBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.aboutBtn.Location = New System.Drawing.Point(0, 0)
-        Me.aboutBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.aboutBtn.Name = "aboutBtn"
-        Me.aboutBtn.ShadowDecoration.Parent = Me.aboutBtn
-        Me.aboutBtn.Size = New System.Drawing.Size(336, 75)
-        Me.aboutBtn.TabIndex = 0
-        Me.aboutBtn.Text = "        About"
-        Me.aboutBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'pnSettings
         '
         Me.pnSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnSettings.Controls.Add(Me.settingsBtn)
-        Me.pnSettings.Location = New System.Drawing.Point(9, 486)
+        Me.pnSettings.Location = New System.Drawing.Point(9, 652)
         Me.pnSettings.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.pnSettings.Name = "pnSettings"
-        Me.pnSettings.Size = New System.Drawing.Size(281, 75)
+        Me.pnSettings.Size = New System.Drawing.Size(336, 75)
         Me.pnSettings.TabIndex = 3
-        '
-        'settingsBtn
-        '
-        Me.settingsBtn.CheckedState.Parent = Me.settingsBtn
-        Me.settingsBtn.CustomImages.Parent = Me.settingsBtn
-        Me.settingsBtn.Dock = System.Windows.Forms.DockStyle.Left
-        Me.settingsBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.settingsBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.settingsBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.settingsBtn.HoverState.Parent = Me.settingsBtn
-        Me.settingsBtn.Image = CType(resources.GetObject("settingsBtn.Image"), System.Drawing.Image)
-        Me.settingsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.settingsBtn.Location = New System.Drawing.Point(0, 0)
-        Me.settingsBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.settingsBtn.Name = "settingsBtn"
-        Me.settingsBtn.ShadowDecoration.Parent = Me.settingsBtn
-        Me.settingsBtn.Size = New System.Drawing.Size(336, 75)
-        Me.settingsBtn.TabIndex = 0
-        Me.settingsBtn.Text = "        Settings"
-        Me.settingsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'ReturnCarBtn
-        '
-        Me.ReturnCarBtn.CheckedState.Parent = Me.ReturnCarBtn
-        Me.ReturnCarBtn.CustomImages.Parent = Me.ReturnCarBtn
-        Me.ReturnCarBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.ReturnCarBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ReturnCarBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.ReturnCarBtn.HoverState.Parent = Me.ReturnCarBtn
-        Me.ReturnCarBtn.Image = CType(resources.GetObject("ReturnCarBtn.Image"), System.Drawing.Image)
-        Me.ReturnCarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReturnCarBtn.Location = New System.Drawing.Point(9, 407)
-        Me.ReturnCarBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.ReturnCarBtn.Name = "ReturnCarBtn"
-        Me.ReturnCarBtn.ShadowDecoration.Parent = Me.ReturnCarBtn
-        Me.ReturnCarBtn.Size = New System.Drawing.Size(336, 71)
-        Me.ReturnCarBtn.TabIndex = 0
-        Me.ReturnCarBtn.Text = "         Return A Car"
-        Me.ReturnCarBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'RentCarBtn
-        '
-        Me.RentCarBtn.CheckedState.Parent = Me.RentCarBtn
-        Me.RentCarBtn.CustomImages.Parent = Me.RentCarBtn
-        Me.RentCarBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.RentCarBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RentCarBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.RentCarBtn.HoverState.Parent = Me.RentCarBtn
-        Me.RentCarBtn.Image = CType(resources.GetObject("RentCarBtn.Image"), System.Drawing.Image)
-        Me.RentCarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.RentCarBtn.Location = New System.Drawing.Point(9, 328)
-        Me.RentCarBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.RentCarBtn.Name = "RentCarBtn"
-        Me.RentCarBtn.ShadowDecoration.Parent = Me.RentCarBtn
-        Me.RentCarBtn.Size = New System.Drawing.Size(336, 71)
-        Me.RentCarBtn.TabIndex = 0
-        Me.RentCarBtn.Text = "         Rent A Car"
-        Me.RentCarBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'recordsBtn
-        '
-        Me.recordsBtn.CheckedState.Parent = Me.recordsBtn
-        Me.recordsBtn.CustomImages.Parent = Me.recordsBtn
-        Me.recordsBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.recordsBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.recordsBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.recordsBtn.HoverState.Parent = Me.recordsBtn
-        Me.recordsBtn.Image = CType(resources.GetObject("recordsBtn.Image"), System.Drawing.Image)
-        Me.recordsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.recordsBtn.Location = New System.Drawing.Point(9, 249)
-        Me.recordsBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.recordsBtn.Name = "recordsBtn"
-        Me.recordsBtn.ShadowDecoration.Parent = Me.recordsBtn
-        Me.recordsBtn.Size = New System.Drawing.Size(336, 71)
-        Me.recordsBtn.TabIndex = 0
-        Me.recordsBtn.Text = "         Customer Records"
-        Me.recordsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'carinvBtn
-        '
-        Me.carinvBtn.CheckedState.Parent = Me.carinvBtn
-        Me.carinvBtn.CustomImages.Parent = Me.carinvBtn
-        Me.carinvBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.carinvBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.carinvBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.carinvBtn.HoverState.Parent = Me.carinvBtn
-        Me.carinvBtn.Image = CType(resources.GetObject("carinvBtn.Image"), System.Drawing.Image)
-        Me.carinvBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.carinvBtn.Location = New System.Drawing.Point(9, 170)
-        Me.carinvBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.carinvBtn.Name = "carinvBtn"
-        Me.carinvBtn.ShadowDecoration.Parent = Me.carinvBtn
-        Me.carinvBtn.Size = New System.Drawing.Size(336, 71)
-        Me.carinvBtn.TabIndex = 0
-        Me.carinvBtn.Text = "         Car Inventory"
-        Me.carinvBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'pnDashboard
         '
@@ -290,8 +146,69 @@ Partial Class Main
         Me.pnDashboard.Location = New System.Drawing.Point(9, 87)
         Me.pnDashboard.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.pnDashboard.Name = "pnDashboard"
-        Me.pnDashboard.Size = New System.Drawing.Size(281, 75)
+        Me.pnDashboard.Size = New System.Drawing.Size(336, 75)
         Me.pnDashboard.TabIndex = 4
+        '
+        'pnSidebar
+        '
+        Me.pnSidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.pnSidebar.Controls.Add(Me.sidebarBtn)
+        Me.pnSidebar.Location = New System.Drawing.Point(9, 4)
+        Me.pnSidebar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.pnSidebar.Name = "pnSidebar"
+        Me.pnSidebar.Size = New System.Drawing.Size(281, 75)
+        Me.pnSidebar.TabIndex = 2
+        '
+        'sidebarPanel
+        '
+        Me.sidebarPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.sidebarPanel.Controls.Add(Me.pnSidebar)
+        Me.sidebarPanel.Controls.Add(Me.pnDashboard)
+        Me.sidebarPanel.Controls.Add(Me.carinvBtn)
+        Me.sidebarPanel.Controls.Add(Me.recordsBtn)
+        Me.sidebarPanel.Controls.Add(Me.RentCarBtn)
+        Me.sidebarPanel.Controls.Add(Me.ReturnCarBtn)
+        Me.sidebarPanel.Controls.Add(Me.Panel1)
+        Me.sidebarPanel.Controls.Add(Me.pnAbout)
+        Me.sidebarPanel.Controls.Add(Me.pnSettings)
+        Me.sidebarPanel.Controls.Add(Me.pnLogout)
+        Me.sidebarPanel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.sidebarPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.sidebarPanel.Location = New System.Drawing.Point(0, 62)
+        Me.sidebarPanel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.sidebarPanel.Name = "sidebarPanel"
+        Me.sidebarPanel.Padding = New System.Windows.Forms.Padding(6, 0, 0, 0)
+        Me.sidebarPanel.Size = New System.Drawing.Size(79, 838)
+        Me.sidebarPanel.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.TransactionsBtn)
+        Me.Panel1.Location = New System.Drawing.Point(9, 486)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(336, 75)
+        Me.Panel1.TabIndex = 4
+        '
+        'sidebarBtn
+        '
+        Me.sidebarBtn.CheckedState.Parent = Me.sidebarBtn
+        Me.sidebarBtn.CustomImages.Parent = Me.sidebarBtn
+        Me.sidebarBtn.Dock = System.Windows.Forms.DockStyle.Left
+        Me.sidebarBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.sidebarBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.sidebarBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.sidebarBtn.HoverState.Parent = Me.sidebarBtn
+        Me.sidebarBtn.Image = CType(resources.GetObject("sidebarBtn.Image"), System.Drawing.Image)
+        Me.sidebarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.sidebarBtn.Location = New System.Drawing.Point(0, 0)
+        Me.sidebarBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.sidebarBtn.Name = "sidebarBtn"
+        Me.sidebarBtn.ShadowDecoration.Parent = Me.sidebarBtn
+        Me.sidebarBtn.Size = New System.Drawing.Size(336, 75)
+        Me.sidebarBtn.TabIndex = 0
+        Me.sidebarBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'dashboardBtn
         '
@@ -313,55 +230,172 @@ Partial Class Main
         Me.dashboardBtn.Text = "         Dashboard"
         Me.dashboardBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'pnSidebar
+        'carinvBtn
         '
-        Me.pnSidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.pnSidebar.Controls.Add(Me.sidebarBtn)
-        Me.pnSidebar.Location = New System.Drawing.Point(9, 4)
-        Me.pnSidebar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.pnSidebar.Name = "pnSidebar"
-        Me.pnSidebar.Size = New System.Drawing.Size(281, 75)
-        Me.pnSidebar.TabIndex = 2
+        Me.carinvBtn.CheckedState.Parent = Me.carinvBtn
+        Me.carinvBtn.CustomImages.Parent = Me.carinvBtn
+        Me.carinvBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.carinvBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.carinvBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.carinvBtn.HoverState.Parent = Me.carinvBtn
+        Me.carinvBtn.Image = CType(resources.GetObject("carinvBtn.Image"), System.Drawing.Image)
+        Me.carinvBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.carinvBtn.Location = New System.Drawing.Point(9, 170)
+        Me.carinvBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.carinvBtn.Name = "carinvBtn"
+        Me.carinvBtn.ShadowDecoration.Parent = Me.carinvBtn
+        Me.carinvBtn.Size = New System.Drawing.Size(336, 71)
+        Me.carinvBtn.TabIndex = 0
+        Me.carinvBtn.Text = "         Car Inventory"
+        Me.carinvBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'sidebarBtn
+        'recordsBtn
         '
-        Me.sidebarBtn.CheckedState.Parent = Me.sidebarBtn
-        Me.sidebarBtn.CustomImages.Parent = Me.sidebarBtn
-        Me.sidebarBtn.Dock = System.Windows.Forms.DockStyle.Left
-        Me.sidebarBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.sidebarBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.sidebarBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(210, Byte), Integer))
-        Me.sidebarBtn.HoverState.Parent = Me.sidebarBtn
-        Me.sidebarBtn.Image = CType(resources.GetObject("sidebarBtn.Image"), System.Drawing.Image)
-        Me.sidebarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.sidebarBtn.Location = New System.Drawing.Point(0, 0)
-        Me.sidebarBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.sidebarBtn.Name = "sidebarBtn"
-        Me.sidebarBtn.ShadowDecoration.Parent = Me.sidebarBtn
-        Me.sidebarBtn.Size = New System.Drawing.Size(336, 75)
-        Me.sidebarBtn.TabIndex = 0
-        Me.sidebarBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.recordsBtn.CheckedState.Parent = Me.recordsBtn
+        Me.recordsBtn.CustomImages.Parent = Me.recordsBtn
+        Me.recordsBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.recordsBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.recordsBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.recordsBtn.HoverState.Parent = Me.recordsBtn
+        Me.recordsBtn.Image = CType(resources.GetObject("recordsBtn.Image"), System.Drawing.Image)
+        Me.recordsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.recordsBtn.Location = New System.Drawing.Point(9, 249)
+        Me.recordsBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.recordsBtn.Name = "recordsBtn"
+        Me.recordsBtn.ShadowDecoration.Parent = Me.recordsBtn
+        Me.recordsBtn.Size = New System.Drawing.Size(336, 71)
+        Me.recordsBtn.TabIndex = 0
+        Me.recordsBtn.Text = "         Customer Records"
+        Me.recordsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'sidebarPanel
+        'RentCarBtn
         '
-        Me.sidebarPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.sidebarPanel.Controls.Add(Me.pnSidebar)
-        Me.sidebarPanel.Controls.Add(Me.pnDashboard)
-        Me.sidebarPanel.Controls.Add(Me.carinvBtn)
-        Me.sidebarPanel.Controls.Add(Me.recordsBtn)
-        Me.sidebarPanel.Controls.Add(Me.RentCarBtn)
-        Me.sidebarPanel.Controls.Add(Me.ReturnCarBtn)
-        Me.sidebarPanel.Controls.Add(Me.pnSettings)
-        Me.sidebarPanel.Controls.Add(Me.pnAbout)
-        Me.sidebarPanel.Controls.Add(Me.pnLogout)
-        Me.sidebarPanel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.sidebarPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.sidebarPanel.Location = New System.Drawing.Point(0, 62)
-        Me.sidebarPanel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.sidebarPanel.Name = "sidebarPanel"
-        Me.sidebarPanel.Padding = New System.Windows.Forms.Padding(6, 0, 0, 0)
-        Me.sidebarPanel.Size = New System.Drawing.Size(79, 838)
-        Me.sidebarPanel.TabIndex = 1
+        Me.RentCarBtn.CheckedState.Parent = Me.RentCarBtn
+        Me.RentCarBtn.CustomImages.Parent = Me.RentCarBtn
+        Me.RentCarBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.RentCarBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RentCarBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.RentCarBtn.HoverState.Parent = Me.RentCarBtn
+        Me.RentCarBtn.Image = CType(resources.GetObject("RentCarBtn.Image"), System.Drawing.Image)
+        Me.RentCarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.RentCarBtn.Location = New System.Drawing.Point(9, 328)
+        Me.RentCarBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.RentCarBtn.Name = "RentCarBtn"
+        Me.RentCarBtn.ShadowDecoration.Parent = Me.RentCarBtn
+        Me.RentCarBtn.Size = New System.Drawing.Size(336, 71)
+        Me.RentCarBtn.TabIndex = 0
+        Me.RentCarBtn.Text = "         Rent A Car"
+        Me.RentCarBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'ReturnCarBtn
+        '
+        Me.ReturnCarBtn.CheckedState.Parent = Me.ReturnCarBtn
+        Me.ReturnCarBtn.CustomImages.Parent = Me.ReturnCarBtn
+        Me.ReturnCarBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.ReturnCarBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ReturnCarBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.ReturnCarBtn.HoverState.Parent = Me.ReturnCarBtn
+        Me.ReturnCarBtn.Image = CType(resources.GetObject("ReturnCarBtn.Image"), System.Drawing.Image)
+        Me.ReturnCarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.ReturnCarBtn.Location = New System.Drawing.Point(9, 407)
+        Me.ReturnCarBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ReturnCarBtn.Name = "ReturnCarBtn"
+        Me.ReturnCarBtn.ShadowDecoration.Parent = Me.ReturnCarBtn
+        Me.ReturnCarBtn.Size = New System.Drawing.Size(336, 71)
+        Me.ReturnCarBtn.TabIndex = 0
+        Me.ReturnCarBtn.Text = "         Return A Car"
+        Me.ReturnCarBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'TransactionsBtn
+        '
+        Me.TransactionsBtn.CheckedState.Parent = Me.TransactionsBtn
+        Me.TransactionsBtn.CustomImages.Parent = Me.TransactionsBtn
+        Me.TransactionsBtn.Dock = System.Windows.Forms.DockStyle.Left
+        Me.TransactionsBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.TransactionsBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TransactionsBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.TransactionsBtn.HoverState.Parent = Me.TransactionsBtn
+        Me.TransactionsBtn.Image = CType(resources.GetObject("TransactionsBtn.Image"), System.Drawing.Image)
+        Me.TransactionsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TransactionsBtn.Location = New System.Drawing.Point(0, 0)
+        Me.TransactionsBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TransactionsBtn.Name = "TransactionsBtn"
+        Me.TransactionsBtn.ShadowDecoration.Parent = Me.TransactionsBtn
+        Me.TransactionsBtn.Size = New System.Drawing.Size(336, 75)
+        Me.TransactionsBtn.TabIndex = 0
+        Me.TransactionsBtn.Text = "        Transaction History"
+        Me.TransactionsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'aboutBtn
+        '
+        Me.aboutBtn.CheckedState.Parent = Me.aboutBtn
+        Me.aboutBtn.CustomImages.Parent = Me.aboutBtn
+        Me.aboutBtn.Dock = System.Windows.Forms.DockStyle.Left
+        Me.aboutBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.aboutBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.aboutBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.aboutBtn.HoverState.Parent = Me.aboutBtn
+        Me.aboutBtn.Image = CType(resources.GetObject("aboutBtn.Image"), System.Drawing.Image)
+        Me.aboutBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.aboutBtn.Location = New System.Drawing.Point(0, 0)
+        Me.aboutBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.aboutBtn.Name = "aboutBtn"
+        Me.aboutBtn.ShadowDecoration.Parent = Me.aboutBtn
+        Me.aboutBtn.Size = New System.Drawing.Size(336, 75)
+        Me.aboutBtn.TabIndex = 0
+        Me.aboutBtn.Text = "        About"
+        Me.aboutBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'settingsBtn
+        '
+        Me.settingsBtn.CheckedState.Parent = Me.settingsBtn
+        Me.settingsBtn.CustomImages.Parent = Me.settingsBtn
+        Me.settingsBtn.Dock = System.Windows.Forms.DockStyle.Left
+        Me.settingsBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.settingsBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.settingsBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.settingsBtn.HoverState.Parent = Me.settingsBtn
+        Me.settingsBtn.Image = CType(resources.GetObject("settingsBtn.Image"), System.Drawing.Image)
+        Me.settingsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.settingsBtn.Location = New System.Drawing.Point(0, 0)
+        Me.settingsBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.settingsBtn.Name = "settingsBtn"
+        Me.settingsBtn.ShadowDecoration.Parent = Me.settingsBtn
+        Me.settingsBtn.Size = New System.Drawing.Size(336, 75)
+        Me.settingsBtn.TabIndex = 0
+        Me.settingsBtn.Text = "        Settings"
+        Me.settingsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'logoutBtn
+        '
+        Me.logoutBtn.CheckedState.Parent = Me.logoutBtn
+        Me.logoutBtn.CustomImages.Parent = Me.logoutBtn
+        Me.logoutBtn.Dock = System.Windows.Forms.DockStyle.Left
+        Me.logoutBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.logoutBtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(184, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.logoutBtn.HoverState.Parent = Me.logoutBtn
+        Me.logoutBtn.Image = CType(resources.GetObject("logoutBtn.Image"), System.Drawing.Image)
+        Me.logoutBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.logoutBtn.Location = New System.Drawing.Point(0, 0)
+        Me.logoutBtn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.logoutBtn.Name = "logoutBtn"
+        Me.logoutBtn.ShadowDecoration.Parent = Me.logoutBtn
+        Me.logoutBtn.Size = New System.Drawing.Size(336, 75)
+        Me.logoutBtn.TabIndex = 0
+        Me.logoutBtn.Text = "        Logout"
+        Me.logoutBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(12, 12)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.ShadowDecoration.Parent = Me.Guna2PictureBox2
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(39, 33)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox2.TabIndex = 3
+        Me.Guna2PictureBox2.TabStop = False
         '
         'Main
         '
@@ -378,13 +412,14 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
         Me.Guna2Panel1.ResumeLayout(False)
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnLogout.ResumeLayout(False)
         Me.pnAbout.ResumeLayout(False)
         Me.pnSettings.ResumeLayout(False)
         Me.pnDashboard.ResumeLayout(False)
         Me.pnSidebar.ResumeLayout(False)
         Me.sidebarPanel.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -409,4 +444,6 @@ Partial Class Main
     Friend WithEvents sidebarBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents sidebarPanel As FlowLayoutPanel
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TransactionsBtn As Guna.UI2.WinForms.Guna2Button
 End Class
