@@ -122,13 +122,25 @@ Public Class CarInventory
         Using conn As New MySqlConnection(ConnectDatabase)
             Try
                 conn.Open()
-                Dim query As String = "SELECT car_model, status FROM cars"
+                Dim query As String = "SELECT c.car_model, " &
+                                      "CASE " &
+                                      "  WHEN c.status = 'Maintenance' THEN 'Maintenance' " &
+                                      "  WHEN EXISTS ( " &
+                                      "      SELECT 1 FROM rentals r " &
+                                      "      WHERE r.car_model = c.car_model " &
+                                      "      AND r.status = 'Active' " &
+                                      "      AND r.rent_date <= CURDATE() " &
+                                      "  ) THEN 'Rented' " &
+                                      "  ELSE 'Available' " &
+                                      "END AS real_status " &
+                                      "FROM cars c"
+
                 Using cmd As New MySqlCommand(query, conn)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
 
                         While reader.Read()
                             Dim dbModel As String = reader("car_model").ToString()
-                            Dim dbStatus As String = reader("status").ToString()
+                            Dim dbStatus As String = reader("real_status").ToString()
 
                             If CarPanelMap.ContainsKey(dbModel) And CarLabelMap.ContainsKey(dbModel) Then
                                 Dim pnl As Panel = CarPanelMap(dbModel)
@@ -142,7 +154,7 @@ Public Class CarInventory
                                 ElseIf dbStatus = "Rented" Then
                                     pnl.BackColor = Color.Salmon
                                     lbl.ForeColor = Color.DarkRed
-                                Else
+                                ElseIf dbStatus = "Maintenance" Then
                                     pnl.BackColor = Color.LightGray
                                     lbl.ForeColor = Color.DimGray
                                 End If

@@ -253,4 +253,12 @@ Public Class ReturnCar
     Private Sub ReturnCar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         LoadActiveRentals()
     End Sub
+
+    Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
+
+    End Sub
+
+    Private Sub ClearBtn_Click(sender As Object, e As EventArgs) Handles ClearBtn.Click
+        ResetForm()
+    End Sub
 End Class
